@@ -58,8 +58,8 @@
         <a href="#timeline" data-i18n="nav.timeline" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Timeline</a>
         <a href="#stories" data-i18n="nav.stories" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Stories</a>
         <a href="#gallery" data-i18n="nav.gallery" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Gallery</a>
-        <a href="#about" data-i18n="nav.about" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">About</a>
-        <a href="#contact" data-i18n="nav.contact" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Contact</a>
+        <a href="./about.html" data-i18n="nav.about" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">About</a>
+        <a href="./contact.html" data-i18n="nav.contact" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Contact</a>
       </nav>
 
       <!-- Right Actions -->
@@ -131,13 +131,13 @@
       >
         <nav class="flex flex-col space-y-1.5 text-sm text-cream/90">
           <a href="#home" data-i18n="nav.home" class="px-3.5 py-2.5 rounded-xl text-gold bg-white/10 font-medium mobile-link">Home</a>
-          <a href="#about" data-i18n="nav.about" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">About</a>
+          <a href="./about.html" data-i18n="nav.about" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">About</a>
           <a href="#wonders" data-i18n="nav.wonders" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">The Wonders</a>
           <a href="#map" data-i18n="nav.map" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Map</a>
           <a href="#timeline" data-i18n="nav.timeline" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Timeline</a>
           <a href="#stories" data-i18n="nav.stories" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Stories</a>
           <a href="#gallery" data-i18n="nav.gallery" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Gallery</a>
-          <a href="#contact" data-i18n="nav.contact" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Contact</a>
+          <a href="./contact.html" data-i18n="nav.contact" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Contact</a>
           <div class="pt-2">
             <a href="#wonders" class="mobile-link w-full bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold py-3 rounded-full flex items-center justify-center gap-1.5 shadow-md transition-all">
               <span data-i18n="nav.explore">Explore</span>
@@ -193,79 +193,10 @@
       </div>
     </div>
 
-    <a href="#about" class="absolute bottom-8 right-5 sm:right-8 md:right-12 z-10 flex items-center gap-2 text-[11px] 2xl:text-xs tracking-widest text-cream/60 hover:text-gold transition-colors">
+    <a href="#wonders" class="absolute bottom-8 right-5 sm:right-8 md:right-12 z-10 flex items-center gap-2 text-[11px] 2xl:text-xs tracking-widest text-cream/60 hover:text-gold transition-colors">
       <span data-i18n="hero.scroll">Scroll Down</span>
       <span class="animate-bounce">&darr;</span>
     </a>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-20 sm:py-28 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <div class="lg:col-span-4 flex justify-center">
-        <div class="relative w-60 h-60 sm:w-72 sm:h-72 2xl:w-80 2xl:h-80 rounded-full p-4 border border-gold/15 flex items-center justify-center">
-          <div class="w-full h-full rounded-full p-3 border border-gold/25">
-            <img 
-              src="./assets/images/wonders/petra.png" 
-              alt="The Seven Wonders" 
-              class="w-full h-full object-cover rounded-full"
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-4 space-y-4 text-center lg:text-left">
-        <p data-i18n="about.eyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase">A Journey Through Time</p>
-        <h2 data-i18n="about.title" class="font-serif text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight">
-          The Seven Wonders of the World
-        </h2>
-        <p data-i18n="about.desc" class="text-sm 2xl:text-base text-muted leading-relaxed">
-          A celebration of human creativity, architectural genius, and timeless beauty. These extraordinary landmarks have inspired generations and continue to unite the world.
-        </p>
-        <div class="pt-2">
-          <a href="#wonders" class="inline-flex items-center gap-2 text-xs 2xl:text-sm text-cream border border-gold/40 hover:border-gold hover:bg-gold hover:text-dark-bg px-5 py-2.5 rounded-full transition-all duration-300">
-            <span data-i18n="about.cta">Explore More</span>
-            <span>&rarr;</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="lg:col-span-4">
-        <div class="grid grid-cols-3 gap-3 sm:gap-4">
-          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2">
-            <span class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold shrink-0">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>
-            </span>
-            <div>
-              <p class="font-serif text-xl sm:text-2xl text-cream leading-none">7</p>
-              <p data-i18n="about.stat1" class="text-[10px] sm:text-[11px] text-muted mt-1 leading-tight">Iconic Destinations</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2">
-            <span class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold shrink-0">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-            </span>
-            <div>
-              <p class="font-serif text-xl sm:text-2xl text-cream leading-none">7,000+</p>
-              <p data-i18n="about.stat2" class="text-[10px] sm:text-[11px] text-muted mt-1 leading-tight">Years of History</p>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2">
-            <span class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold shrink-0">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            </span>
-            <div>
-              <p data-i18n="about.stat3Val" class="font-serif text-xl sm:text-2xl text-cream leading-none">Billions</p>
-              <p data-i18n="about.stat3" class="text-[10px] sm:text-[11px] text-muted mt-1 leading-tight">Inspired Worldwide</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </section>
 
   <!-- Wonders Grid -->

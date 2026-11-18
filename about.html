@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — 7WONDERS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/output.css">
+
+  <style>
+    .about-hero-bg {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(214, 182, 121, 0.14) 0%, rgba(11, 12, 14, 0.4) 55%, #0B0C0E 100%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.015) 0px,
+          rgba(255, 255, 255, 0.04) 36px,
+          rgba(0, 0, 0, 0.45) 72px,
+          rgba(0, 0, 0, 0.45) 130px
+        );
+    }
+
+    .creator-name {
+      font-size: clamp(2.1rem, 5.4vw, 4.35rem);
+      line-height: 1.02;
+      letter-spacing: 0.04em;
+    }
+
+    .creator-outline {
+      color: transparent;
+      -webkit-text-stroke: 1.2px rgba(245, 243, 239, 0.72);
+      transition: all 0.35s ease;
+    }
+
+    .creator-row:hover .creator-outline {
+      -webkit-text-stroke: 1.2px #D6B679;
+    }
+  </style>
+</head>
+<body class="bg-dark-bg text-cream antialiased selection:bg-gold selection:text-dark-bg overflow-x-hidden">
+
+  <!-- Navbar (Identik dengan index.html) -->
+  <header 
+    id="navbar" 
+    style="position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 60; background: transparent;"
+    class="px-3 sm:px-8 pt-3 sm:pt-5 transition-all duration-300"
+  >
+    <style>
+      .nav-capsule { height: 58px; padding-left: 14px; padding-right: 14px; }
+      .nav-logo { width: 32px; height: 32px; object-fit: contain; }
+      .nav-brand-text { font-size: 1rem; letter-spacing: 0.14em; }
+      @media (min-width: 640px) {
+        .nav-capsule { height: 72px; padding-left: 28px; padding-right: 28px; }
+        .nav-logo { width: 44px; height: 44px; }
+        .nav-brand-text { font-size: 1.25rem; letter-spacing: 0.18em; }
+      }
+      @media (min-width: 1024px) {
+        #mobileMenuBtn, #mobileMenuWrapper, #mobileBackdrop { display: none !important; }
+      }
+    </style>
+
+    <div 
+      id="navGlassContainer" 
+      style="position: relative; z-index: 60; background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); border: 1px solid rgba(214, 182, 121, 0.28); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);"
+      class="nav-glass nav-capsule w-full max-w-7xl 2xl:max-w-[1440px] mx-auto rounded-full flex items-center justify-between gap-2 transition-all duration-300"
+    >
+      
+      <!-- Brand Logo -->
+      <a href="./index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+        <img 
+          src="./assets/images/logo.png" 
+          onerror="if(!this.dataset.t){this.dataset.t='1';this.src='./assets/icon/logo.png';}else if(this.dataset.t==='1'){this.dataset.t='2';this.src='./assets/logo.png';}"
+          alt="7WONDERS Logo" 
+          class="nav-logo transition-transform duration-500 group-hover:rotate-45"
+        >
+        <span class="nav-brand-text font-serif text-cream font-medium">
+          <span class="text-gold">7</span>WONDERS
+        </span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex items-center gap-1 2xl:gap-2 text-xs 2xl:text-sm tracking-wide text-cream/90">
+        <a href="./index.html" data-i18n="nav.home" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Home</a>
+        <a href="./index.html#map" data-i18n="nav.map" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Map</a>
+        <a href="./index.html#timeline" data-i18n="nav.timeline" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Timeline</a>
+        <a href="./index.html#stories" data-i18n="nav.stories" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Stories</a>
+        <a href="./index.html#gallery" data-i18n="nav.gallery" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Gallery</a>
+        <a href="./about.html" data-i18n="nav.about" class="px-3.5 py-2 rounded-full text-gold bg-white/10 font-medium transition-all">About</a>
+        <a href="./contact.html" data-i18n="nav.contact" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Contact</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <button id="openSearchBtn" type="button" aria-label="Search" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-cream/90 hover:text-gold hover:bg-white/10 transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+
+        <!-- Language Switcher -->
+        <div class="relative" id="langWrapper">
+          <button id="langToggle" type="button" class="flex items-center gap-1.5 text-xs text-cream/95 hover:text-gold transition-all cursor-pointer py-1.5 px-2.5 sm:py-2 sm:px-3 rounded-full bg-white/10 border border-white/20 hover:border-gold/50">
+            <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" stroke-width="1.6"/>
+              <path stroke-width="1.6" d="M3.6 9h16.8M3.6 15h16.8M12 3a14.5 14.5 0 010 18M12 3a14.5 14.5 0 000 18"/>
+            </svg>
+            <span id="langText">EN</span>
+            <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div id="langDropdown" style="background: rgba(18, 20, 26, 0.88); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);" class="hidden absolute right-0 mt-3 min-w-[165px] rounded-2xl border border-gold/30 shadow-2xl p-2 space-y-1 z-50">
+            <button type="button" data-lang="en" class="lang-option w-full px-3.5 py-2 rounded-xl text-left text-xs flex items-center justify-between gap-4 text-gold bg-white/15 cursor-pointer transition-colors">
+              <span>English</span>
+              <span class="text-[10px] tracking-wider opacity-80">EN</span>
+            </button>
+            <button type="button" data-lang="id" class="lang-option w-full px-3.5 py-2 rounded-xl text-left text-xs flex items-center justify-between gap-4 text-cream/90 hover:bg-white/15 hover:text-gold cursor-pointer transition-colors">
+              <span>Indonesia</span>
+              <span class="text-[10px] tracking-wider opacity-80">ID</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="./index.html#wonders" class="hidden sm:flex bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-5 py-2.5 rounded-full items-center gap-1.5 shadow-md transition-all duration-300">
+          <span data-i18n="nav.explore">Explore</span>
+          <span>&rarr;</span>
+        </a>
+
+        <!-- Animated Hamburger Button -->
+        <button 
+          id="mobileMenuBtn" 
+          type="button" 
+          aria-label="Menu" 
+          style="position: relative; z-index: 65; touch-action: manipulation;"
+          class="lg:hidden w-9 h-9 rounded-full flex flex-col items-center justify-center gap-1.5 text-cream hover:text-gold hover:bg-white/10 cursor-pointer transition-colors"
+        >
+          <span id="hamTop" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+          <span id="hamMid" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: opacity 0.25s ease, transform 0.35s ease;"></span>
+          <span id="hamBot" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Backdrop -->
+    <div 
+      id="mobileBackdrop" 
+      style="position: fixed; inset: 0; background: rgba(8, 9, 12, 0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 50;"
+    ></div>
+
+    <!-- Mobile Slide-in Glass Drawer (Side to Center) -->
+    <div 
+      id="mobileMenuWrapper" 
+      style="position: fixed; top: 82px; left: 0; right: 0; padding: 0 14px; overflow: hidden; z-index: 55; pointer-events: none;"
+    >
+      <div 
+        id="mobileMenu" 
+        style="width: 100%; max-width: 420px; margin: 0 auto; background: rgba(18, 20, 27, 0.78); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(214, 182, 121, 0.32); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12); transform: translateX(120%); opacity: 0; pointer-events: none; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;"
+        class="rounded-3xl px-5 py-5"
+      >
+        <nav class="flex flex-col space-y-1.5 text-sm text-cream/90">
+          <a href="./index.html" data-i18n="nav.home" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Home</a>
+          <a href="./about.html" data-i18n="nav.about" class="px-3.5 py-2.5 rounded-xl text-gold bg-white/10 font-medium mobile-link">About</a>
+          <a href="./index.html#wonders" data-i18n="nav.wonders" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">The Wonders</a>
+          <a href="./index.html#map" data-i18n="nav.map" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Map</a>
+          <a href="./index.html#timeline" data-i18n="nav.timeline" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Timeline</a>
+          <a href="./index.html#stories" data-i18n="nav.stories" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Stories</a>
+          <a href="./index.html#gallery" data-i18n="nav.gallery" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Gallery</a>
+          <a href="./contact.html" data-i18n="nav.contact" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Contact</a>
+          <div class="pt-2">
+            <a href="./index.html#wonders" class="mobile-link w-full bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold py-3 rounded-full flex items-center justify-center gap-1.5 shadow-md transition-all">
+              <span data-i18n="nav.explore">Explore</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section class="relative overflow-hidden about-hero-bg pt-36 pb-20 sm:pt-44 sm:pb-24">
+    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+      <img 
+        src="./assets/images/wonders/colosseum.png" 
+        alt="" 
+        class="w-full h-full object-cover object-center"
+      >
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-bg/70 via-dark-bg/75 to-dark-bg"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12">
+      <p data-i18n="aboutPage.heroEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.28em] text-gold uppercase mb-3">
+        About
+      </p>
+      <h1 data-i18n="aboutPage.heroTitle" class="font-serif text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl text-cream font-normal leading-tight max-w-3xl">
+        More than just a journey
+      </h1>
+      <p data-i18n="aboutPage.heroSubtitle" class="text-sm sm:text-base text-cream/80 leading-relaxed max-w-md mt-4">
+        7WONDERS is a digital exploration of the world's most extraordinary landmarks.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story & Stats -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="mb-6">
+      <p data-i18n="aboutPage.storyEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-2">
+        Our Story
+      </p>
+      <h2 data-i18n="aboutPage.storyTitle" class="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream font-normal">
+        Our story
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Left Story Copy -->
+      <div class="lg:col-span-6">
+        <p data-i18n="aboutPage.storyDesc" class="text-sm sm:text-base text-muted leading-relaxed">
+          Every wonder began as a human idea. 7WONDERS gathers their history, architecture, geography and culture into one experience that feels like a museum, an encyclopedia and a travel guide at once.
+        </p>
+      </div>
+
+      <!-- Right 3 Stat Cards -->
+      <div class="lg:col-span-6">
+        <div class="grid grid-cols-3 gap-3 sm:gap-4">
+          <div class="bg-dark-surface border border-white/10 rounded-2xl py-6 px-3 sm:px-5 text-center">
+            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">7</p>
+            <p data-i18n="aboutPage.stat1" class="text-[10px] sm:text-xs text-muted mt-2">The Wonders</p>
+          </div>
+
+          <div class="bg-dark-surface border border-white/10 rounded-2xl py-6 px-3 sm:px-5 text-center">
+            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">4</p>
+            <p data-i18n="aboutPage.stat2" class="text-[10px] sm:text-xs text-muted mt-2">Continents</p>
+          </div>
+
+          <div class="bg-dark-surface border border-white/10 rounded-2xl py-6 px-3 sm:px-5 text-center">
+            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">6,125</p>
+            <p data-i18n="aboutPage.stat3" class="text-[10px] sm:text-xs text-muted mt-2">Years of History</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two Editorial Standard Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+      <div class="bg-dark-surface border border-white/10 rounded-2xl p-6 sm:p-8">
+        <h3 data-i18n="aboutPage.card1Title" class="font-serif text-2xl sm:text-3xl text-cream mb-3">
+          Our approach to information
+        </h3>
+        <p data-i18n="aboutPage.card1Desc" class="text-xs sm:text-sm text-muted leading-relaxed">
+          Content is educational and based on historical references and UNESCO listings. When sources differ, we prefer cautious wording such as "about" and "around".
+        </p>
+      </div>
+
+      <div class="bg-dark-surface border border-white/10 rounded-2xl p-6 sm:p-8">
+        <h3 data-i18n="aboutPage.card2Title" class="font-serif text-2xl sm:text-3xl text-cream mb-3">
+          Sources &amp; standards
+        </h3>
+        <p data-i18n="aboutPage.card2Desc" class="text-xs sm:text-sm text-muted leading-relaxed">
+          Ticket prices and opening hours always come from official tourism sites and must be checked before travel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Creators -->
+  <section class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 data-i18n="aboutPage.creatorsTitle" class="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-[0.06em] text-cream uppercase">
+        THE CREATORS
+      </h2>
+      <p data-i18n="aboutPage.creatorsSubtitle" class="text-xs sm:text-sm text-muted mt-2">
+        The minds behind 7WONDERS
+      </p>
+    </div>
+
+    <div class="border-t border-white/10">
+      <!-- Creator 01 -->
+      <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
+        <span class="font-serif text-2xl sm:text-4xl text-gold shrink-0 w-10 sm:w-14">01</span>
+        <div>
+          <p data-i18n="aboutPage.role1" class="text-xs sm:text-sm text-muted mb-1.5">Lead Developer</p>
+          <h3 class="creator-name font-serif text-gold uppercase font-normal">
+            AHMAD FAUZI
+          </h3>
+        </div>
+      </div>
+
+      <!-- Creator 02 -->
+      <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
+        <span class="font-serif text-2xl sm:text-4xl text-cream/90 shrink-0 w-10 sm:w-14">02</span>
+        <div>
+          <p data-i18n="aboutPage.role2" class="text-xs sm:text-sm text-muted mb-1.5">Creative Director</p>
+          <h3 class="creator-name font-serif text-cream uppercase font-normal">
+            SARAH WIJAYA
+          </h3>
+        </div>
+      </div>
+
+      <!-- Creator 03 -->
+      <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
+        <span class="font-serif text-2xl sm:text-4xl text-cream/90 shrink-0 w-10 sm:w-14">03</span>
+        <div>
+          <p data-i18n="aboutPage.role3" class="text-xs sm:text-sm text-muted mb-1.5">Content Specialist</p>
+          <h3 class="creator-name creator-outline font-serif uppercase font-normal">
+            RENDRA PRATAMA
+          </h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Tidak diubah) -->
+  <footer id="contact" class="border-t border-white/10 bg-[#08090B] pt-16 pb-8 px-5 sm:px-8 md:px-12 mt-12">
+    <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto flex flex-col items-center text-center">
+      
+      <a href="./index.html" class="flex flex-col items-center gap-2 group">
+        <img 
+          src="./assets/images/logo.png" 
+          onerror="if(!this.dataset.t){this.dataset.t='1';this.src='./assets/icon/logo.png';}else if(this.dataset.t==='1'){this.dataset.t='2';this.src='./assets/logo.png';}"
+          alt="7WONDERS Logo" 
+          class="transition-transform duration-500 group-hover:rotate-45"
+          style="width: 68px; height: 68px; object-fit: contain;"
+        >
+        <span class="font-serif text-2xl tracking-[0.2em] text-cream font-medium">
+          <span class="text-gold">7</span>WONDERS
+        </span>
+      </a>
+      <p data-i18n="footer.tagline" class="text-xs text-muted mt-1.5">Seven Wonders. Infinite Stories.</p>
+
+      <form id="newsletterForm" class="mt-6 w-full max-w-md flex flex-col sm:flex-row items-center gap-2.5">
+        <input 
+          type="email" 
+          id="newsletterEmail"
+          data-i18n-placeholder="footer.emailPlaceholder"
+          required
+          placeholder="Your Email Address" 
+          class="w-full bg-dark-surface border border-white/10 focus:border-gold outline-none rounded-full px-5 py-2.5 text-xs text-cream placeholder:text-muted"
+        >
+        <button type="submit" data-i18n="footer.subscribe" class="w-full sm:w-auto bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-6 py-2.5 rounded-full transition-colors cursor-pointer shrink-0">
+          Subscribe
+        </button>
+      </form>
+      <p id="newsletterMsg" data-i18n="footer.subscribed" class="text-xs text-gold mt-2 hidden">Thank you for subscribing to 7WONDERS!</p>
+
+      <div class="flex items-center gap-3 mt-8">
+        <a href="#contact" aria-label="Instagram" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#contact" aria-label="Dribbble" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </a>
+        <a href="#contact" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </a>
+        <a href="#contact" aria-label="X" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#contact" aria-label="TikTok" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+        </a>
+      </div>
+
+      <nav class="flex flex-wrap justify-center gap-6 sm:gap-8 text-xs text-cream/75 mt-8">
+        <a href="./index.html" data-i18n="nav.home" class="hover:text-gold transition-colors">Home</a>
+        <a href="./index.html#wonders" data-i18n="nav.wonders" class="hover:text-gold transition-colors">The Wonders</a>
+        <a href="./index.html#map" data-i18n="nav.map" class="hover:text-gold transition-colors">Map</a>
+        <a href="./index.html#timeline" data-i18n="nav.timeline" class="hover:text-gold transition-colors">Timeline</a>
+        <a href="./index.html#stories" data-i18n="nav.stories" class="hover:text-gold transition-colors">Stories</a>
+        <a href="./index.html#gallery" data-i18n="nav.gallery" class="hover:text-gold transition-colors">Gallery</a>
+        <a href="./about.html" data-i18n="nav.about" class="hover:text-gold transition-colors">About</a>
+        <a href="./contact.html" data-i18n="nav.contact" class="hover:text-gold transition-colors">Contact</a>
+      </nav>
+
+      <div class="w-full border-t border-white/5 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-muted">
+        <p data-i18n="footer.rights">&copy; 2026 7WONDERS. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="#contact" data-i18n="footer.privacy" class="hover:text-gold transition-colors">Privacy Policy</a>
+          <span>|</span>
+          <a href="#contact" data-i18n="footer.terms" class="hover:text-gold transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-gold hover:bg-gold-hover text-dark-bg flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none cursor-pointer">
+    &uarr;
+  </button>
+
+  <!-- Modal Detail -->
+  <div id="detailModal" class="hidden fixed inset-0 z-50 bg-dark-bg/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-dark-surface border border-gold/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
+      <button id="closeModalBtn" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-dark-bg/80 text-cream hover:text-gold flex items-center justify-center cursor-pointer">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Modal Search -->
+  <div id="searchModal" class="hidden fixed inset-0 z-50 bg-dark-bg/90 backdrop-blur-md flex items-start justify-center pt-24 p-4">
+    <div id="searchBox" class="bg-dark-surface border border-gold/30 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4">
+        <h3 data-i18n="search.title" class="font-serif text-2xl text-cream">Search Wonders</h3>
+        <button id="closeSearchBtn" class="text-muted hover:text-gold text-xl cursor-pointer transition-transform duration-200 hover:rotate-90">&times;</button>
+      </div>
+      <div class="relative flex items-center">
+        <svg class="w-4 h-4 text-gold/80 absolute left-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input id="searchInput" data-i18n-placeholder="search.placeholder" type="text" placeholder="Type Colosseum, Petra, Taj Mahal..." style="padding-left: 2.75rem;" class="w-full bg-dark-bg border border-white/15 focus:border-gold rounded-xl pr-4 py-3 text-sm text-cream outline-none transition-colors">
+      </div>
+      <div id="searchResults" class="mt-4 space-y-2 max-h-60 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+  <script>
+    Object.assign(translations.en, {
+      "aboutPage.heroEyebrow": "About",
+      "aboutPage.heroTitle": "More than just a journey",
+      "aboutPage.heroSubtitle": "7WONDERS is a digital exploration of the world's most extraordinary landmarks.",
+      "aboutPage.storyEyebrow": "Our Story",
+      "aboutPage.storyTitle": "Our story",
+      "aboutPage.storyDesc": "Every wonder began as a human idea. 7WONDERS gathers their history, architecture, geography and culture into one experience that feels like a museum, an encyclopedia and a travel guide at once.",
+      "aboutPage.stat1": "The Wonders",
+      "aboutPage.stat2": "Continents",
+      "aboutPage.stat3": "Years of History",
+      "aboutPage.card1Title": "Our approach to information",
+      "aboutPage.card1Desc": "Content is educational and based on historical references and UNESCO listings. When sources differ, we prefer cautious wording such as \"about\" and \"around\".",
+      "aboutPage.card2Title": "Sources &amp; standards",
+      "aboutPage.card2Desc": "Ticket prices and opening hours always come from official tourism sites and must be checked before travel.",
+      "aboutPage.creatorsTitle": "THE CREATORS",
+      "aboutPage.creatorsSubtitle": "The minds behind 7WONDERS",
+      "aboutPage.role1": "Lead Developer",
+      "aboutPage.role2": "Creative Director",
+      "aboutPage.role3": "Content Specialist"
+    });
+
+    Object.assign(translations.id, {
+      "aboutPage.heroEyebrow": "Tentang",
+      "aboutPage.heroTitle": "Lebih dari sekadar perjalanan",
+      "aboutPage.heroSubtitle": "7WONDERS adalah eksplorasi digital terhadap monumen paling luar biasa di dunia.",
+      "aboutPage.storyEyebrow": "Kisah Kami",
+      "aboutPage.storyTitle": "Kisah kami",
+      "aboutPage.storyDesc": "Setiap keajaiban berawal dari gagasan manusia. 7WONDERS merangkum sejarah, arsitektur, geografi, dan budayanya dalam satu pengalaman yang terasa seperti museum, ensiklopedia, sekaligus panduan perjalanan.",
+      "aboutPage.stat1": "Keajaiban Dunia",
+      "aboutPage.stat2": "Benua",
+      "aboutPage.stat3": "Tahun Sejarah",
+      "aboutPage.card1Title": "Pendekatan informasi kami",
+      "aboutPage.card1Desc": "Konten bersifat edukatif dan disusun berdasarkan referensi sejarah serta daftar UNESCO. Jika sumber berbeda, kami memilih redaksi yang hati-hati seperti \"sekitar\" dan \"kurang lebih\".",
+      "aboutPage.card2Title": "Sumber &amp; standar",
+      "aboutPage.card2Desc": "Harga tiket dan jam operasional selalu merujuk pada situs pariwisata resmi dan perlu diperiksa kembali sebelum bepergian.",
+      "aboutPage.creatorsTitle": "PARA KREATOR",
+      "aboutPage.creatorsSubtitle": "Sosok di balik 7WONDERS",
+      "aboutPage.role1": "Pengembang Utama",
+      "aboutPage.role2": "Direktur Kreatif",
+      "aboutPage.role3": "Spesialis Konten"
+    });
+
+    applyLanguage(currentLang);
+  </script>
+</body>
+</html>
