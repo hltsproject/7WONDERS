@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7WONDERS — Discover the Greatest Masterpieces</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-dark-bg text-cream antialiased selection:bg-gold selection:text-dark-bg overflow-x-hidden">
+
+  <!-- Navbar -->
+  <header 
+    id="navbar" 
+    style="position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 60; background: transparent;"
+    class="px-3 sm:px-8 pt-3 sm:pt-5 transition-all duration-300"
+  >
+    <style>
+      .nav-capsule { height: 58px; padding-left: 14px; padding-right: 14px; }
+      .nav-logo { width: 32px; height: 32px; object-fit: contain; }
+      .nav-brand-text { font-size: 1rem; letter-spacing: 0.14em; }
+      @media (min-width: 640px) {
+        .nav-capsule { height: 72px; padding-left: 28px; padding-right: 28px; }
+        .nav-logo { width: 44px; height: 44px; }
+        .nav-brand-text { font-size: 1.25rem; letter-spacing: 0.18em; }
+      }
+      @media (min-width: 1024px) {
+        #mobileMenuBtn, #mobileMenuWrapper, #mobileBackdrop { display: none !important; }
+      }
+    </style>
+
+    <div 
+      id="navGlassContainer" 
+      style="position: relative; z-index: 60; background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); border: 1px solid rgba(214, 182, 121, 0.28); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);"
+      class="nav-glass nav-capsule w-full max-w-7xl 2xl:max-w-[1440px] mx-auto rounded-full flex items-center justify-between gap-2 transition-all duration-300"
+    >
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+        <img 
+          src="./assets/images/logo.png" 
+          onerror="if(!this.dataset.t){this.dataset.t='1';this.src='./assets/icon/logo.png';}else if(this.dataset.t==='1'){this.dataset.t='2';this.src='./assets/logo.png';}"
+          alt="7WONDERS Logo" 
+          class="nav-logo transition-transform duration-500 group-hover:rotate-45"
+        >
+        <span class="nav-brand-text font-serif text-cream font-medium">
+          <span class="text-gold">7</span>WONDERS
+        </span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex items-center gap-1 2xl:gap-2 text-xs 2xl:text-sm tracking-wide text-cream/90">
+        <a href="#home" data-i18n="nav.home" class="nav-link px-3.5 py-2 rounded-full text-gold bg-white/10 font-medium transition-all">Home</a>
+        <a href="#map" data-i18n="nav.map" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Map</a>
+        <a href="#timeline" data-i18n="nav.timeline" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Timeline</a>
+        <a href="#stories" data-i18n="nav.stories" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Stories</a>
+        <a href="#gallery" data-i18n="nav.gallery" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Gallery</a>
+        <a href="#about" data-i18n="nav.about" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">About</a>
+        <a href="#contact" data-i18n="nav.contact" class="nav-link px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Contact</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <button id="openSearchBtn" type="button" aria-label="Search" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-cream/90 hover:text-gold hover:bg-white/10 transition-all cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+
+        <!-- Language Switcher -->
+        <div class="relative" id="langWrapper">
+          <button id="langToggle" type="button" class="flex items-center gap-1.5 text-xs text-cream/95 hover:text-gold transition-all cursor-pointer py-1.5 px-2.5 sm:py-2 sm:px-3 rounded-full bg-white/10 border border-white/20 hover:border-gold/50">
+            <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" stroke-width="1.6"/>
+              <path stroke-width="1.6" d="M3.6 9h16.8M3.6 15h16.8M12 3a14.5 14.5 0 010 18M12 3a14.5 14.5 0 000 18"/>
+            </svg>
+            <span id="langText">EN</span>
+            <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+
+          <div id="langDropdown" style="background: rgba(18, 20, 26, 0.88); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);" class="hidden absolute right-0 mt-3 min-w-[165px] rounded-2xl border border-gold/30 shadow-2xl p-2 space-y-1 z-50">
+            <button type="button" data-lang="en" class="lang-option w-full px-3.5 py-2 rounded-xl text-left text-xs flex items-center justify-between gap-4 text-gold bg-white/15 cursor-pointer transition-colors">
+              <span>English</span>
+              <span class="text-[10px] tracking-wider opacity-80">EN</span>
+            </button>
+            <button type="button" data-lang="id" class="lang-option w-full px-3.5 py-2 rounded-xl text-left text-xs flex items-center justify-between gap-4 text-cream/90 hover:bg-white/15 hover:text-gold cursor-pointer transition-colors">
+              <span>Indonesia</span>
+              <span class="text-[10px] tracking-wider opacity-80">ID</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="#wonders" class="hidden sm:flex bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-5 py-2.5 rounded-full items-center gap-1.5 shadow-md transition-all duration-300">
+          <span data-i18n="nav.explore">Explore</span>
+          <span>&rarr;</span>
+        </a>
+
+        <!-- Animated Hamburger Button -->
+        <button 
+          id="mobileMenuBtn" 
+          type="button" 
+          aria-label="Menu" 
+          style="position: relative; z-index: 65; touch-action: manipulation;"
+          class="lg:hidden w-9 h-9 rounded-full flex flex-col items-center justify-center gap-1.5 text-cream hover:text-gold hover:bg-white/10 cursor-pointer transition-colors"
+        >
+          <span id="hamTop" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+          <span id="hamMid" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: opacity 0.25s ease, transform 0.35s ease;"></span>
+          <span id="hamBot" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Backdrop -->
+    <div 
+      id="mobileBackdrop" 
+      style="position: fixed; inset: 0; background: rgba(8, 9, 12, 0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 50;"
+    ></div>
+
+    <!-- Mobile Slide-in Glass Drawer (Side to Center) -->
+    <div 
+      id="mobileMenuWrapper" 
+      style="position: fixed; top: 82px; left: 0; right: 0; padding: 0 14px; overflow: hidden; z-index: 55; pointer-events: none;"
+    >
+      <div 
+        id="mobileMenu" 
+        style="width: 100%; max-width: 420px; margin: 0 auto; background: rgba(18, 20, 27, 0.78); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(214, 182, 121, 0.32); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12); transform: translateX(120%); opacity: 0; pointer-events: none; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;"
+        class="rounded-3xl px-5 py-5"
+      >
+        <nav class="flex flex-col space-y-1.5 text-sm text-cream/90">
+          <a href="#home" data-i18n="nav.home" class="px-3.5 py-2.5 rounded-xl text-gold bg-white/10 font-medium mobile-link">Home</a>
+          <a href="#about" data-i18n="nav.about" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">About</a>
+          <a href="#wonders" data-i18n="nav.wonders" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">The Wonders</a>
+          <a href="#map" data-i18n="nav.map" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Map</a>
+          <a href="#timeline" data-i18n="nav.timeline" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Timeline</a>
+          <a href="#stories" data-i18n="nav.stories" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Stories</a>
+          <a href="#gallery" data-i18n="nav.gallery" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Gallery</a>
+          <a href="#contact" data-i18n="nav.contact" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Contact</a>
+          <div class="pt-2">
+            <a href="#wonders" class="mobile-link w-full bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold py-3 rounded-full flex items-center justify-center gap-1.5 shadow-md transition-all">
+              <span data-i18n="nav.explore">Explore</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" style="margin-top: 0; padding-top: 0;" class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="./assets/images/wonders/coloseum-section 1.png" 
+        alt="Colosseum Rome" 
+        class="w-full h-full object-cover object-center scale-105"
+      >
+      <div class="absolute inset-0 bg-gradient-to-r from-dark-bg/95 via-dark-bg/55 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-dark-bg/40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 w-full pt-24 pb-16">
+      <div class="max-w-2xl 2xl:max-w-3xl">
+        <p data-i18n="hero.tagline" class="text-[11px] sm:text-xs 2xl:text-sm tracking-[0.28em] text-gold/90 uppercase mb-3">
+          Seven Wonders. Infinite Stories.
+        </p>
+
+        <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl 2xl:text-9xl font-normal tracking-[0.06em] text-cream leading-none">
+          <span class="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl mr-1">7</span>WONDERS
+        </h1>
+
+        <div class="flex items-center gap-3 mt-3 mb-4">
+          <span class="text-xs 2xl:text-sm tracking-widest text-cream/70 font-light">01 / 07</span>
+          <span class="h-[1px] w-12 bg-gold/50"></span>
+        </div>
+
+        <p data-i18n="hero.subtitle" class="font-serif italic text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl text-gold/95 leading-snug font-normal">
+          Discover the Greatest Masterpieces<br class="hidden sm:block"> of Our World.
+        </p>
+
+        <div class="mt-8">
+          <button id="watchJourneyBtn" class="group inline-flex items-center gap-3.5 text-xs 2xl:text-sm tracking-wider text-cream/90 hover:text-gold transition-colors cursor-pointer">
+            <span class="w-10 h-10 2xl:w-12 2xl:h-12 rounded-full border border-cream/30 bg-cream/10 backdrop-blur-sm flex items-center justify-center group-hover:border-gold group-hover:bg-gold group-hover:text-dark-bg transition-all duration-300">
+              <svg class="w-3.5 h-3.5 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </span>
+            <span data-i18n="hero.watch">Watch the Journey</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="absolute bottom-8 right-5 sm:right-8 md:right-12 z-10 flex items-center gap-2 text-[11px] 2xl:text-xs tracking-widest text-cream/60 hover:text-gold transition-colors">
+      <span data-i18n="hero.scroll">Scroll Down</span>
+      <span class="animate-bounce">&darr;</span>
+    </a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 sm:py-28 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-4 flex justify-center">
+        <div class="relative w-60 h-60 sm:w-72 sm:h-72 2xl:w-80 2xl:h-80 rounded-full p-4 border border-gold/15 flex items-center justify-center">
+          <div class="w-full h-full rounded-full p-3 border border-gold/25">
+            <img 
+              src="./assets/images/wonders/petra.png" 
+              alt="The Seven Wonders" 
+              class="w-full h-full object-cover rounded-full"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 space-y-4 text-center lg:text-left">
+        <p data-i18n="about.eyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase">A Journey Through Time</p>
+        <h2 data-i18n="about.title" class="font-serif text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight">
+          The Seven Wonders of the World
+        </h2>
+        <p data-i18n="about.desc" class="text-sm 2xl:text-base text-muted leading-relaxed">
+          A celebration of human creativity, architectural genius, and timeless beauty. These extraordinary landmarks have inspired generations and continue to unite the world.
+        </p>
+        <div class="pt-2">
+          <a href="#wonders" class="inline-flex items-center gap-2 text-xs 2xl:text-sm text-cream border border-gold/40 hover:border-gold hover:bg-gold hover:text-dark-bg px-5 py-2.5 rounded-full transition-all duration-300">
+            <span data-i18n="about.cta">Explore More</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4">
+        <div class="grid grid-cols-3 gap-3 sm:gap-4">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2">
+            <span class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>
+            </span>
+            <div>
+              <p class="font-serif text-xl sm:text-2xl text-cream leading-none">7</p>
+              <p data-i18n="about.stat1" class="text-[10px] sm:text-[11px] text-muted mt-1 leading-tight">Iconic Destinations</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2">
+            <span class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+            </span>
+            <div>
+              <p class="font-serif text-xl sm:text-2xl text-cream leading-none">7,000+</p>
+              <p data-i18n="about.stat2" class="text-[10px] sm:text-[11px] text-muted mt-1 leading-tight">Years of History</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2">
+            <span class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </span>
+            <div>
+              <p data-i18n="about.stat3Val" class="font-serif text-xl sm:text-2xl text-cream leading-none">Billions</p>
+              <p data-i18n="about.stat3" class="text-[10px] sm:text-[11px] text-muted mt-1 leading-tight">Inspired Worldwide</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Wonders Grid -->
+  <section id="wonders" class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="max-w-xl mb-12">
+      <p data-i18n="wonders.eyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-3">Seven Masterpieces. Seven Stories.</p>
+      <h2 data-i18n="wonders.title" class="font-serif text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-cream leading-tight mb-4">
+        Seven Masterpieces. Seven Stories.
+      </h2>
+      <p data-i18n="wonders.desc" class="text-sm 2xl:text-base text-muted leading-relaxed">
+        From ancient civilizations to timeless beauty, explore the 7 Wonders of the World.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 2xl:gap-8">
+      
+      <article data-wonder="0" class="wonder-card group relative aspect-[3/4] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all duration-300 cursor-pointer">
+        <img src="./assets/images/wonders/great-wall.png" onerror="this.src='https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=80'" alt="Great Wall of China" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <span class="text-[11px] tracking-widest text-gold block mb-1">01 / 07</span>
+          <h3 class="font-serif text-2xl 2xl:text-3xl text-cream group-hover:text-gold transition-colors">Great Wall of China</h3>
+          <p data-i18n="loc.0" class="text-xs text-muted mt-1">China &middot; Asia</p>
+        </div>
+      </article>
+
+      <article data-wonder="1" class="wonder-card group relative aspect-[3/4] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all duration-300 cursor-pointer">
+        <img src="./assets/images/wonders/petra.png" alt="Petra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <span class="text-[11px] tracking-widest text-gold block mb-1">02 / 07</span>
+          <h3 class="font-serif text-2xl 2xl:text-3xl text-cream group-hover:text-gold transition-colors">Petra</h3>
+          <p data-i18n="loc.1" class="text-xs text-muted mt-1">Jordan &middot; Asia</p>
+        </div>
+      </article>
+
+      <article data-wonder="2" class="wonder-card group relative aspect-[3/4] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all duration-300 cursor-pointer">
+        <img src="./assets/images/wonders/colosseum.png" alt="Colosseum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <span class="text-[11px] tracking-widest text-gold block mb-1">03 / 07</span>
+          <h3 class="font-serif text-2xl 2xl:text-3xl text-cream group-hover:text-gold transition-colors">Colosseum</h3>
+          <p data-i18n="loc.2" class="text-xs text-muted mt-1">Italy &middot; Europe</p>
+        </div>
+      </article>
+
+      <article data-wonder="3" class="wonder-card group relative aspect-[3/4] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all duration-300 cursor-pointer">
+        <img src="./assets/images/wonders/chicen itza.png" alt="Chichén Itzá" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <span class="text-[11px] tracking-widest text-gold block mb-1">04 / 07</span>
+          <h3 class="font-serif text-2xl 2xl:text-3xl text-cream group-hover:text-gold transition-colors">Chichén Itzá</h3>
+          <p data-i18n="loc.3" class="text-xs text-muted mt-1">Mexico &middot; North America</p>
+        </div>
+      </article>
+
+      <article data-wonder="4" class="wonder-card group relative aspect-[3/4] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all duration-300 cursor-pointer">
+        <img src="./assets/images/wonders/matchu pichu.png" alt="Machu Picchu" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <span class="text-[11px] tracking-widest text-gold block mb-1">05 / 07</span>
+          <h3 class="font-serif text-2xl 2xl:text-3xl text-cream group-hover:text-gold transition-colors">Machu Picchu</h3>
+          <p data-i18n="loc.4" class="text-xs text-muted mt-1">Peru &middot; South America</p>
+        </div>
+      </article>
+
+      <article data-wonder="5" class="wonder-card group relative aspect-[3/4] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all duration-300 cursor-pointer">
+        <img src="./assets/images/wonders/tajmahal.png" alt="Taj Mahal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <span class="text-[11px] tracking-widest text-gold block mb-1">06 / 07</span>
+          <h3 class="font-serif text-2xl 2xl:text-3xl text-cream group-hover:text-gold transition-colors">Taj Mahal</h3>
+          <p data-i18n="loc.5" class="text-xs text-muted mt-1">India &middot; Asia</p>
+        </div>
+      </article>
+
+      <article data-wonder="6" class="wonder-card group relative aspect-[3/4] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all duration-300 cursor-pointer">
+        <img src="./assets/images/wonders/christ the redeemer.png" alt="Christ the Redeemer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <span class="text-[11px] tracking-widest text-gold block mb-1">07 / 07</span>
+          <h3 class="font-serif text-2xl 2xl:text-3xl text-cream group-hover:text-gold transition-colors">Christ the Redeemer</h3>
+          <p data-i18n="loc.6" class="text-xs text-muted mt-1">Brazil &middot; South America</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Map (Google Maps Satellite Hybrid) -->
+  <section id="map" class="py-20 sm:py-28 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+      <div>
+        <p data-i18n="map.eyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-3">Map</p>
+        <h2 data-i18n="map.title" class="font-serif text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-cream">
+          Explore the World
+        </h2>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-2 lg:pt-0">
+        <button data-index="0" class="map-wonder-btn px-5 py-2.5 rounded-full text-xs tracking-wide border border-gold bg-gold text-dark-bg font-medium cursor-pointer transition-all">Great Wall</button>
+        <button data-index="1" class="map-wonder-btn px-5 py-2.5 rounded-full text-xs tracking-wide border border-white/15 bg-dark-surface text-cream/80 hover:border-gold/50 cursor-pointer transition-all">Petra</button>
+        <button data-index="2" class="map-wonder-btn px-5 py-2.5 rounded-full text-xs tracking-wide border border-white/15 bg-dark-surface text-cream/80 hover:border-gold/50 cursor-pointer transition-all">Colosseum</button>
+        <button data-index="3" class="map-wonder-btn px-5 py-2.5 rounded-full text-xs tracking-wide border border-white/15 bg-dark-surface text-cream/80 hover:border-gold/50 cursor-pointer transition-all">Chichén Itzá</button>
+        <button data-index="4" class="map-wonder-btn px-5 py-2.5 rounded-full text-xs tracking-wide border border-white/15 bg-dark-surface text-cream/80 hover:border-gold/50 cursor-pointer transition-all">Machu Picchu</button>
+        <button data-index="5" class="map-wonder-btn px-5 py-2.5 rounded-full text-xs tracking-wide border border-white/15 bg-dark-surface text-cream/80 hover:border-gold/50 cursor-pointer transition-all">Taj Mahal</button>
+        <button data-index="6" class="map-wonder-btn px-5 py-2.5 rounded-full text-xs tracking-wide border border-white/15 bg-dark-surface text-cream/80 hover:border-gold/50 cursor-pointer transition-all">Christ the Redeemer</button>
+      </div>
+    </div>
+
+    <div class="rounded-3xl bg-[#111317] border border-white/10 overflow-hidden p-5 sm:p-8">
+      <div class="w-full h-[340px] sm:h-[460px] 2xl:h-[540px] rounded-2xl overflow-hidden bg-dark-bg">
+        <iframe
+          id="googleMapFrame"
+          title="Google Maps 7 Wonders"
+          src="https://maps.google.com/maps?q=Great+Wall+of+China,+Mutianyu&t=h&z=15&output=embed"
+          class="w-full h-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 px-1">
+        <div class="space-y-1">
+          <p id="mapCurrentTitle" class="font-serif text-xl sm:text-2xl text-cream">Great Wall of China</p>
+          <p id="mapCurrentLoc" class="text-xs text-muted">China &middot; Asia</p>
+        </div>
+        <button id="mapOpenDetailBtn" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-6 py-3 rounded-full transition-all cursor-pointer shrink-0 w-fit">
+          <span data-i18n="map.detailBtn">View Wonder Detail</span>
+          <span>&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="mb-12">
+      <p data-i18n="timeline.eyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-3">Timeline</p>
+      <h2 data-i18n="timeline.title" class="font-serif text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-cream">
+        A Journey Through Time
+      </h2>
+    </div>
+
+    <div class="relative overflow-x-auto no-scrollbar pb-4">
+      <div class="min-w-[820px] lg:min-w-0 relative pt-4">
+        <div class="hidden lg:block absolute top-14 left-8 right-8 h-[1px] bg-gradient-to-r from-gold/10 via-gold/40 to-gold/10"></div>
+
+        <div class="grid grid-cols-7 gap-4 text-center relative z-10">
+          
+          <div class="group flex flex-col items-center">
+            <div class="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full p-1 border border-gold/40 bg-dark-bg group-hover:border-gold transition-all">
+              <img src="./assets/images/wonders/great-wall.png" onerror="this.src='https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=300&q=80'" alt="Great Wall" class="w-full h-full object-cover rounded-full">
+            </div>
+            <span class="text-[11px] text-gold mt-4 tracking-wider">c. 700 BC</span>
+            <h3 class="font-serif text-base 2xl:text-lg text-cream mt-1">Great Wall of China</h3>
+          </div>
+
+          <div class="group flex flex-col items-center">
+            <div class="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full p-1 border border-gold/40 bg-dark-bg group-hover:border-gold transition-all">
+              <img src="./assets/images/wonders/petra.png" alt="Petra" class="w-full h-full object-cover rounded-full">
+            </div>
+            <span class="text-[11px] text-gold mt-4 tracking-wider">c. 300 BC</span>
+            <h3 class="font-serif text-base 2xl:text-lg text-cream mt-1">Petra</h3>
+          </div>
+
+          <div class="group flex flex-col items-center">
+            <div class="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full p-1 border border-gold/40 bg-dark-bg group-hover:border-gold transition-all">
+              <img src="./assets/images/wonders/colosseum.png" alt="Colosseum" class="w-full h-full object-cover rounded-full">
+            </div>
+            <span class="text-[11px] text-gold mt-4 tracking-wider">c. 70 AD</span>
+            <h3 class="font-serif text-base 2xl:text-lg text-cream mt-1">Colosseum</h3>
+          </div>
+
+          <div class="group flex flex-col items-center">
+            <div class="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full p-1 border border-gold/40 bg-dark-bg group-hover:border-gold transition-all">
+              <img src="./assets/images/wonders/chicen itza.png" alt="Chichén Itzá" class="w-full h-full object-cover rounded-full">
+            </div>
+            <span class="text-[11px] text-gold mt-4 tracking-wider">c. 600 AD</span>
+            <h3 class="font-serif text-base 2xl:text-lg text-cream mt-1">Chichén Itzá</h3>
+          </div>
+
+          <div class="group flex flex-col items-center">
+            <div class="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full p-1 border border-gold/40 bg-dark-bg group-hover:border-gold transition-all">
+              <img src="./assets/images/wonders/matchu pichu.png" alt="Machu Picchu" class="w-full h-full object-cover rounded-full">
+            </div>
+            <span class="text-[11px] text-gold mt-4 tracking-wider">c. 1450 AD</span>
+            <h3 class="font-serif text-base 2xl:text-lg text-cream mt-1">Machu Picchu</h3>
+          </div>
+
+          <div class="group flex flex-col items-center">
+            <div class="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full p-1 border border-gold/40 bg-dark-bg group-hover:border-gold transition-all">
+              <img src="./assets/images/wonders/tajmahal.png" alt="Taj Mahal" class="w-full h-full object-cover rounded-full">
+            </div>
+            <span class="text-[11px] text-gold mt-4 tracking-wider">1632 AD</span>
+            <h3 class="font-serif text-base 2xl:text-lg text-cream mt-1">Taj Mahal</h3>
+          </div>
+
+          <div class="group flex flex-col items-center">
+            <div class="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full p-1 border border-gold/40 bg-dark-bg group-hover:border-gold transition-all">
+              <img src="./assets/images/wonders/christ the redeemer.png" alt="Christ the Redeemer" class="w-full h-full object-cover rounded-full">
+            </div>
+            <span class="text-[11px] text-gold mt-4 tracking-wider">1931 AD</span>
+            <h3 class="font-serif text-base 2xl:text-lg text-cream mt-1">Christ the Redeemer</h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a href="#stories" class="inline-flex items-center gap-2 text-xs 2xl:text-sm text-cream border border-gold/35 hover:border-gold hover:bg-gold hover:text-dark-bg px-5 py-2.5 rounded-full transition-all">
+        <span data-i18n="timeline.cta">Explore the Timeline</span>
+        <span>&darr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Stories -->
+  <section id="stories" class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="mb-12">
+      <p data-i18n="stories.eyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-3">Stories</p>
+      <h2 data-i18n="stories.title" class="font-serif text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-cream">
+        Stories &amp; Knowledge
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 2xl:gap-8">
+      
+      <article data-story="0" class="story-card group relative aspect-[16/10] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all cursor-pointer">
+        <img src="./assets/images/stories/petra-story.png" onerror="this.src='./assets/images/wonders/petra.png'" alt="The Mystery Behind Petra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/50 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 data-i18n="stories.story0" class="font-serif text-xl sm:text-2xl text-cream group-hover:text-gold transition-colors">The Mystery Behind Petra</h3>
+          <p class="text-[11px] text-muted mt-1.5"><span data-i18n="stories.read6">6 min read</span> &middot; <span data-i18n="stories.readMore" class="text-gold">Read story &rarr;</span></p>
+        </div>
+      </article>
+
+      <article data-story="1" class="story-card group relative aspect-[16/10] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all cursor-pointer">
+        <img src="./assets/images/stories/wall-story.png" onerror="this.src='https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=80'" alt="How Was the Great Wall Built?" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/50 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 data-i18n="stories.story1" class="font-serif text-xl sm:text-2xl text-cream group-hover:text-gold transition-colors">How Was the Great Wall Built?</h3>
+          <p class="text-[11px] text-muted mt-1.5"><span data-i18n="stories.read8">8 min read</span> &middot; <span data-i18n="stories.readMore" class="text-gold">Read story &rarr;</span></p>
+        </div>
+      </article>
+
+      <article data-story="2" class="story-card group relative aspect-[16/10] rounded-2xl overflow-hidden bg-dark-card border border-white/10 hover:border-gold/50 transition-all cursor-pointer">
+        <img src="./assets/images/stories/colosseum-story.png" onerror="this.src='./assets/images/wonders/colosseum.png'" alt="The Engineering of the Colosseum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/50 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6">
+          <h3 data-i18n="stories.story2" class="font-serif text-xl sm:text-2xl text-cream group-hover:text-gold transition-colors">The Engineering of the Colosseum</h3>
+          <p class="text-[11px] text-muted mt-1.5"><span data-i18n="stories.read7">7 min read</span> &middot; <span data-i18n="stories.readMore" class="text-gold">Read story &rarr;</span></p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="mb-12">
+      <p data-i18n="gallery.eyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-3">Gallery</p>
+      <h2 data-i18n="gallery.title" class="font-serif text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl text-cream">
+        Our Gallery
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[210px] sm:auto-rows-[230px] 2xl:auto-rows-[260px]">
+      
+      <div class="gallery-item sm:col-span-2 lg:col-span-1 lg:row-span-2 group relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+        <img src="./assets/images/wonders/great-wall.png" onerror="this.src='https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=80'" alt="Great Wall of China" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="absolute bottom-3 left-3 bg-dark-bg/75 backdrop-blur-md text-cream text-[11px] px-3 py-1 rounded-full border border-white/10">Great Wall of China</span>
+      </div>
+
+      <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+        <img src="./assets/images/wonders/petra.png" alt="Petra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="absolute bottom-3 left-3 bg-dark-bg/75 backdrop-blur-md text-cream text-[11px] px-3 py-1 rounded-full border border-white/10">Petra</span>
+      </div>
+
+      <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+        <img src="./assets/images/wonders/colosseum.png" alt="Colosseum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="absolute bottom-3 left-3 bg-dark-bg/75 backdrop-blur-md text-cream text-[11px] px-3 py-1 rounded-full border border-white/10">Colosseum</span>
+      </div>
+
+      <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+        <img src="./assets/images/wonders/chicen itza.png" alt="Chichén Itzá" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="absolute bottom-3 left-3 bg-dark-bg/75 backdrop-blur-md text-cream text-[11px] px-3 py-1 rounded-full border border-white/10">Chichén Itzá</span>
+      </div>
+
+      <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+        <img src="./assets/images/wonders/matchu pichu.png" alt="Machu Picchu" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="absolute bottom-3 left-3 bg-dark-bg/75 backdrop-blur-md text-cream text-[11px] px-3 py-1 rounded-full border border-white/10">Machu Picchu</span>
+      </div>
+
+      <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+        <img src="./assets/images/wonders/tajmahal.png" alt="Taj Mahal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="absolute bottom-3 left-3 bg-dark-bg/75 backdrop-blur-md text-cream text-[11px] px-3 py-1 rounded-full border border-white/10">Taj Mahal</span>
+      </div>
+
+      <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+        <img src="./assets/images/wonders/christ the redeemer.png" alt="Christ the Redeemer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="absolute bottom-3 left-3 bg-dark-bg/75 backdrop-blur-md text-cream text-[11px] px-3 py-1 rounded-full border border-white/10">Christ the Redeemer</span>
+      </div>
+
+    </div>
+
+    <div class="mt-8">
+      <a href="#wonders" class="inline-flex items-center gap-2 text-xs 2xl:text-sm text-cream border border-gold/35 hover:border-gold hover:bg-gold hover:text-dark-bg px-5 py-2.5 rounded-full transition-all">
+        <span data-i18n="gallery.cta">View More Photos</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="border-t border-white/10 bg-[#08090B] pt-16 pb-8 px-5 sm:px-8 md:px-12 mt-12">
+    <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto flex flex-col items-center text-center">
+      
+      <a href="#home" class="flex flex-col items-center gap-2 group">
+        <img 
+          src="./assets/images/logo.png" 
+          onerror="if(!this.dataset.t){this.dataset.t='1';this.src='./assets/icon/logo.png';}else if(this.dataset.t==='1'){this.dataset.t='2';this.src='./assets/logo.png';}"
+          alt="7WONDERS Logo" 
+          class="transition-transform duration-500 group-hover:rotate-45"
+          style="width: 68px; height: 68px; object-fit: contain;"
+        >
+        <span class="font-serif text-2xl tracking-[0.2em] text-cream font-medium">
+          <span class="text-gold">7</span>WONDERS
+        </span>
+      </a>
+      <p data-i18n="footer.tagline" class="text-xs text-muted mt-1.5">Seven Wonders. Infinite Stories.</p>
+
+      <form id="newsletterForm" class="mt-6 w-full max-w-md flex flex-col sm:flex-row items-center gap-2.5">
+        <input 
+          type="email" 
+          id="newsletterEmail"
+          data-i18n-placeholder="footer.emailPlaceholder"
+          required
+          placeholder="Your Email Address" 
+          class="w-full bg-dark-surface border border-white/10 focus:border-gold outline-none rounded-full px-5 py-2.5 text-xs text-cream placeholder:text-muted"
+        >
+        <button type="submit" data-i18n="footer.subscribe" class="w-full sm:w-auto bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-6 py-2.5 rounded-full transition-colors cursor-pointer shrink-0">
+          Subscribe
+        </button>
+      </form>
+      <p id="newsletterMsg" data-i18n="footer.subscribed" class="text-xs text-gold mt-2 hidden">Thank you for subscribing to 7WONDERS!</p>
+
+      <div class="flex items-center gap-3 mt-8">
+        <a href="#contact" aria-label="Instagram" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#contact" aria-label="Dribbble" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </a>
+        <a href="#contact" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </a>
+        <a href="#contact" aria-label="X" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#contact" aria-label="TikTok" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+        </a>
+      </div>
+
+      <nav class="flex flex-wrap justify-center gap-6 sm:gap-8 text-xs text-cream/75 mt-8">
+        <a href="#home" data-i18n="nav.home" class="hover:text-gold transition-colors">Home</a>
+        <a href="#wonders" data-i18n="nav.wonders" class="hover:text-gold transition-colors">The Wonders</a>
+        <a href="#map" data-i18n="nav.map" class="hover:text-gold transition-colors">Map</a>
+        <a href="#timeline" data-i18n="nav.timeline" class="hover:text-gold transition-colors">Timeline</a>
+        <a href="#stories" data-i18n="nav.stories" class="hover:text-gold transition-colors">Stories</a>
+        <a href="#gallery" data-i18n="nav.gallery" class="hover:text-gold transition-colors">Gallery</a>
+        <a href="#about" data-i18n="nav.about" class="hover:text-gold transition-colors">About</a>
+        <a href="#contact" data-i18n="nav.contact" class="hover:text-gold transition-colors">Contact</a>
+      </nav>
+
+      <div class="w-full border-t border-white/5 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-muted">
+        <p data-i18n="footer.rights">&copy; 2026 7WONDERS. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="#contact" data-i18n="footer.privacy" class="hover:text-gold transition-colors">Privacy Policy</a>
+          <span>|</span>
+          <a href="#contact" data-i18n="footer.terms" class="hover:text-gold transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-gold hover:bg-gold-hover text-dark-bg flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none cursor-pointer">
+    &uarr;
+  </button>
+
+  <!-- Modal Detail -->
+  <div id="detailModal" class="hidden fixed inset-0 z-50 bg-dark-bg/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-dark-surface border border-gold/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
+      <button id="closeModalBtn" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-dark-bg/80 text-cream hover:text-gold flex items-center justify-center cursor-pointer">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Modal Search -->
+  <div id="searchModal" class="hidden fixed inset-0 z-50 bg-dark-bg/90 backdrop-blur-md flex items-start justify-center pt-24 p-4">
+    <div id="searchBox" class="bg-dark-surface border border-gold/30 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4">
+        <h3 data-i18n="search.title" class="font-serif text-2xl text-cream">Search Wonders</h3>
+        <button id="closeSearchBtn" class="text-muted hover:text-gold text-xl cursor-pointer transition-transform duration-200 hover:rotate-90">&times;</button>
+      </div>
+      <div class="relative flex items-center">
+        <svg class="w-4 h-4 text-gold/80 absolute left-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <input id="searchInput" data-i18n-placeholder="search.placeholder" type="text" placeholder="Type Colosseum, Petra, Taj Mahal..." style="padding-left: 2.75rem;" class="w-full bg-dark-bg border border-white/15 focus:border-gold rounded-xl pr-4 py-3 text-sm text-cream outline-none transition-colors">
+      </div>
+      <div id="searchResults" class="mt-4 space-y-2 max-h-60 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
