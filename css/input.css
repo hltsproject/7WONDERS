@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0B0C0E;
+  --color-dark-surface: #141619;
+  --color-dark-card: #181A1F;
+  --color-gold: #D6B679;
+  --color-gold-hover: #E5C88D;
+  --color-cream: #F5F3EF;
+  --color-muted: #9A9893;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-dark-bg);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+  }
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.gmap-dark {
+  filter: invert(90%) hue-rotate(180deg) contrast(92%);
+}
+.nav-glass {
+  background: rgba(16, 18, 23, 0.45);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(214, 182, 121, 0.22);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-glass.is-scrolled {
+  background: rgba(11, 12, 14, 0.78);
+  border-color: rgba(214, 182, 121, 0.32);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
