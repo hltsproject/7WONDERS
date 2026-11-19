@@ -59,11 +59,39 @@ const translations = {
     "aboutPage.role1": "Developer",
     "aboutPage.role2": "Designer",
     "aboutPage.role3": "Quality Assurance",
+    "contactPage.heroEyebrow": "01 &mdash; GET IN TOUCH",
+    "contactPage.heroTitle": "LET'S GET<br>IN TOUCH",
+    "contactPage.heroSubtitle": "Want to ask about routes, guides, or join a historical open trip? Tell us your adventure plan, and our team will assist from preparation until your return.",
+    "contactPage.resEyebrow": "02 &mdash; RESERVATION",
+    "contactPage.resTitle": "PLAN YOUR<br>ADVENTURE",
+    "contactPage.labelName": "FULL NAME",
+    "contactPage.phName": "Your Full Name",
+    "contactPage.labelEmail": "EMAIL",
+    "contactPage.labelSubject": "SUBJECT / PLAN",
+    "contactPage.phSubject": "Search your adventure...",
+    "contactPage.labelWonder": "DESTINATION WONDERS",
+    "contactPage.labelMessage": "MESSAGE",
+    "contactPage.phMessage": "Planned dates, group size, memorable experiences...",
+    "contactPage.submitBtn": "SEND MESSAGE",
+    "contactPage.fastReply": "Fast response &mdash; we will reply as soon as possible",
+    "contactPage.directTitle": "DIRECT CONTACT",
+    "contactPage.hoursLabel": "WORKING HOURS",
+    "contactPage.hoursValue": "Monday - Saturday, 08:00 - 20:00 WIB",
+    "contactPage.socialLabel": "SOCIAL MEDIA",
+    "contactPage.faqTitle": "FREQUENTLY<br>ASKED",
+    "contactPage.faqQ1": "Can beginners join a historical open trip?",
+    "contactPage.faqA1": "Absolutely! All of our open trip routes are beginner-friendly and led by experienced historical guides from briefing until return.",
+    "contactPage.faqQ2": "Are entrance tickets and accommodations arranged by the team?",
+    "contactPage.faqA2": "Yes, reservation packages include official UNESCO site tickets, curated accommodations, local transport, and travel documentation.",
+    "contactPage.faqQ3": "How far in advance should I book before departure?",
+    "contactPage.faqA3": "We recommend booking at least 3–6 weeks prior to departure so visa arrangements, site entry quotas, and flights run smoothly.",
+    "contactPage.faqQ4": "Can I rent travel equipment?",
+    "contactPage.faqA4": "Yes. Our basecamp team provides light trekking gear, audio guides, and weather-specific equipment rentals suited to your destination.",
     "footer.tagline": "Seven Wonders. Infinite Stories.",
     "footer.emailPlaceholder": "Your Email Address",
     "footer.subscribe": "Subscribe",
     "footer.subscribed": "Thank you for subscribing to 7WONDERS!",
-    "footer.rights": "&copy; 2026 7WONDERS. All rights reserved.",
+    "footer.rights": "&copy; 2026 7WONDERS",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms of Service",
     "search.title": "Search Wonders",
@@ -130,11 +158,39 @@ const translations = {
     "aboutPage.role1": "Developer",
     "aboutPage.role2": "Desainer",
     "aboutPage.role3": "Quality Assurance",
+    "contactPage.heroEyebrow": "01 &mdash; GET IN TOUCH",
+    "contactPage.heroTitle": "LET'S GET<br>IN TOUCH",
+    "contactPage.heroSubtitle": "Mau tanya rute, pemandu, atau ikut open trip sejarah? Ceritakan rencana petualanganmu, tim kami bantu dari persiapan sampai pulang.",
+    "contactPage.resEyebrow": "02 &mdash; RESERVASI",
+    "contactPage.resTitle": "RENCANAKAN<br>PETUALANGANMU",
+    "contactPage.labelName": "NAMA LENGKAP",
+    "contactPage.phName": "Daniyal Baha Pramata",
+    "contactPage.labelEmail": "EMAIL",
+    "contactPage.labelSubject": "SUBJEK / RENCANA",
+    "contactPage.phSubject": "Cari petualanganmu...",
+    "contactPage.labelWonder": "KEAJAIBAN TUJUAN",
+    "contactPage.labelMessage": "PESAN",
+    "contactPage.phMessage": "Rencana tanggal, jumlah orang, pengalaman menarik...",
+    "contactPage.submitBtn": "KIRIM PESAN",
+    "contactPage.fastReply": "Respon cepat &mdash; kami akan membalas secepatnya",
+    "contactPage.directTitle": "KONTAK LANGSUNG",
+    "contactPage.hoursLabel": "JAM KERJA",
+    "contactPage.hoursValue": "Senin - Sabtu, 08.00 - 20.00 WIB",
+    "contactPage.socialLabel": "SOSIAL MEDIA",
+    "contactPage.faqTitle": "SERING<br>DITANYAKAN",
+    "contactPage.faqQ1": "Apakah pemula boleh ikut open trip sejarah?",
+    "contactPage.faqA1": "Tentu saja! Semua rute open trip kami dirancang ramah untuk pemula dan didampingi pemandu sejarah berpengalaman mulai dari sesi briefing hingga kepulangan.",
+    "contactPage.faqQ2": "Apakah tiket masuk dan akomodasi diurus oleh tim?",
+    "contactPage.faqA2": "Ya, paket reservasi sudah mencakup tiket masuk resmi situs UNESCO, akomodasi pilihan, transportasi lokal, serta dokumentasi selama perjalanan.",
+    "contactPage.faqQ3": "Berapa lama sebelum berangkat sebaiknya booking?",
+    "contactPage.faqA3": "Kami menyarankan pemesanan minimal 3–6 minggu sebelum tanggal keberangkatan agar pengurusan visa, kuota masuk situs, dan penerbangan berjalan optimal.",
+    "contactPage.faqQ4": "Bisa sewa perlengkapan perjalanan?",
+    "contactPage.faqA4": "Bisa. Tim basecamp kami menyediakan penyewaan perlengkapan trekking ringan, audio guide, dan perlengkapan cuaca ekstrem sesuai destinasi tujuanmu.",
     "footer.tagline": "Tujuh Keajaiban. Kisah Tanpa Batas.",
     "footer.emailPlaceholder": "Alamat Email Anda",
     "footer.subscribe": "Berlangganan",
     "footer.subscribed": "Terima kasih telah berlangganan 7WONDERS!",
-    "footer.rights": "&copy; 2026 7WONDERS. Hak cipta dilindungi.",
+    "footer.rights": "&copy; 2026 7WONDERS",
     "footer.privacy": "Kebijakan Privasi",
     "footer.terms": "Syarat &amp; Ketentuan",
     "search.title": "Cari Keajaiban Dunia",
@@ -636,6 +692,103 @@ document.getElementById("newsletterForm")?.addEventListener("submit", (e) => {
   e.preventDefault();
   document.getElementById("newsletterEmail").value = "";
   document.getElementById("newsletterMsg")?.classList.remove("hidden");
+});
+
+// ==========================================
+// CONTACT PAGE INTERACTIONS
+// ==========================================
+
+// 1. Keajaiban Tujuan Pills (Multi/Toggle Select)
+const wonderPills = document.querySelectorAll(".wonder-pill");
+const selectedWondersInput = document.getElementById("selectedWondersInput");
+
+function syncSelectedWonders() {
+  if (!selectedWondersInput) return;
+  const selected = Array.from(wonderPills)
+    .filter(pill => pill.classList.contains("is-active"))
+    .map(pill => pill.dataset.wonderPill);
+  selectedWondersInput.value = selected.join(", ");
+}
+
+wonderPills.forEach(pill => {
+  pill.addEventListener("click", () => {
+    const isActive = pill.classList.toggle("is-active");
+    if (isActive) {
+      pill.classList.remove("border-white/15", "bg-dark-surface/80", "text-cream/80");
+      pill.classList.add("border-gold", "bg-gold", "text-dark-bg", "font-semibold");
+    } else {
+      pill.classList.remove("border-gold", "bg-gold", "text-dark-bg", "font-semibold");
+      pill.classList.add("border-white/15", "bg-dark-surface/80", "text-cream/80");
+    }
+    syncSelectedWonders();
+  });
+});
+
+// 2. Copy Email Button
+const copyEmailBtn = document.getElementById("copyEmailBtn");
+copyEmailBtn?.addEventListener("click", async () => {
+  const email = copyEmailBtn.dataset.email || "hello@7wonders.id";
+  try {
+    await navigator.clipboard.writeText(email);
+    copyEmailBtn.textContent = "COPIED!";
+    copyEmailBtn.classList.add("border-gold", "text-gold");
+    setTimeout(() => {
+      copyEmailBtn.textContent = "COPY";
+      copyEmailBtn.classList.remove("border-gold", "text-gold");
+    }, 2000);
+  } catch (err) {
+    console.error("Failed to copy email:", err);
+  }
+});
+
+// 3. Contact Reservation Form Submit
+const contactForm = document.getElementById("contactForm");
+const contactFormFeedback = document.getElementById("contactFormFeedback");
+
+contactForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("contactName")?.value.trim();
+  const wonders = selectedWondersInput?.value || (currentLang === "id" ? "Belum dipilih" : "Not specified");
+  const isID = currentLang === "id";
+
+  if (contactFormFeedback) {
+    contactFormFeedback.innerHTML = isID
+      ? `<span class="text-gold font-semibold">Terima kasih, ${name}!</span> Permintaan reservasi untuk destinasi <span class="text-cream font-medium">${wonders}</span> telah diterima. Tim kami akan segera menghubungimu.`
+      : `<span class="text-gold font-semibold">Thank you, ${name}!</span> Your reservation inquiry for <span class="text-cream font-medium">${wonders}</span> has been received. Our team will reach out shortly.`;
+    contactFormFeedback.classList.remove("hidden");
+  }
+
+  contactForm.reset();
+  syncSelectedWonders();
+});
+
+// 4. FAQ Accordion
+const faqToggles = document.querySelectorAll(".faq-toggle");
+faqToggles.forEach(toggle => {
+  toggle.addEventListener("click", () => {
+    const item = toggle.closest(".faq-item");
+    const answer = item?.querySelector(".faq-answer");
+    const icon = toggle.querySelector(".faq-icon");
+    const isOpen = answer && !answer.classList.contains("hidden");
+
+    // Tutup item lain agar rapi
+    document.querySelectorAll(".faq-item").forEach(other => {
+      other.querySelector(".faq-answer")?.classList.add("hidden");
+      const otherIcon = other.querySelector(".faq-icon");
+      if (otherIcon) {
+        otherIcon.style.transform = "rotate(0deg)";
+        otherIcon.classList.remove("text-gold");
+      }
+    });
+
+    if (!isOpen && answer) {
+      answer.classList.remove("hidden");
+      if (icon) {
+        icon.style.transform = "rotate(45deg)";
+        icon.classList.add("text-gold");
+      }
+    }
+  });
 });
 
 // Apply Saved Language on Load

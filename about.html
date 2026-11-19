@@ -11,54 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/output.css">
-
-  <style>
-    .about-hero-bg {
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(214, 182, 121, 0.14) 0%, rgba(11, 12, 14, 0.4) 55%, #0B0C0E 100%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.015) 0px,
-          rgba(255, 255, 255, 0.04) 36px,
-          rgba(0, 0, 0, 0.45) 72px,
-          rgba(0, 0, 0, 0.45) 130px
-        );
-    }
-
-    .creator-name {
-      font-size: clamp(2.1rem, 5.4vw, 4.35rem);
-      line-height: 1.02;
-      letter-spacing: 0.04em;
-    }
-  </style>
 </head>
 <body class="bg-dark-bg text-cream antialiased selection:bg-gold selection:text-dark-bg overflow-x-hidden">
 
-  <!-- Navbar (Identik dengan index.html) -->
-  <header 
-    id="navbar" 
-    style="position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 60; background: transparent;"
-    class="px-3 sm:px-8 pt-3 sm:pt-5 transition-all duration-300"
-  >
-    <style>
-      .nav-capsule { height: 58px; padding-left: 14px; padding-right: 14px; }
-      .nav-logo { width: 32px; height: 32px; object-fit: contain; }
-      .nav-brand-text { font-size: 1rem; letter-spacing: 0.14em; }
-      @media (min-width: 640px) {
-        .nav-capsule { height: 72px; padding-left: 28px; padding-right: 28px; }
-        .nav-logo { width: 44px; height: 44px; }
-        .nav-brand-text { font-size: 1.25rem; letter-spacing: 0.18em; }
-      }
-      @media (min-width: 1024px) {
-        #mobileMenuBtn, #mobileMenuWrapper, #mobileBackdrop { display: none !important; }
-      }
-    </style>
-
-    <div 
-      id="navGlassContainer" 
-      style="position: relative; z-index: 60; background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); border: 1px solid rgba(214, 182, 121, 0.28); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16);"
-      class="nav-glass nav-capsule w-full max-w-7xl 2xl:max-w-[1440px] mx-auto rounded-full flex items-center justify-between gap-2 transition-all duration-300"
-    >
+  <!-- Navbar -->
+  <header id="navbar" class="site-navbar px-3 sm:px-8 pt-3 sm:pt-5 transition-all duration-300">
+    <div id="navGlassContainer" class="nav-glass nav-capsule w-full max-w-7xl 2xl:max-w-[1440px] mx-auto rounded-full flex items-center justify-between gap-2 transition-all duration-300">
       
       <!-- Brand Logo -->
       <a href="./index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
@@ -103,7 +61,7 @@
             <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
 
-          <div id="langDropdown" style="background: rgba(18, 20, 26, 0.88); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);" class="hidden absolute right-0 mt-3 min-w-[165px] rounded-2xl border border-gold/30 shadow-2xl p-2 space-y-1 z-50">
+          <div id="langDropdown" class="lang-dropdown-glass hidden absolute right-0 mt-3 min-w-[165px] rounded-2xl border border-gold/30 shadow-2xl p-2 space-y-1 z-50">
             <button type="button" data-lang="en" class="lang-option w-full px-3.5 py-2 rounded-xl text-left text-xs flex items-center justify-between gap-4 text-gold bg-white/15 cursor-pointer transition-colors">
               <span>English</span>
               <span class="text-[10px] tracking-wider opacity-80">EN</span>
@@ -121,36 +79,20 @@
         </a>
 
         <!-- Animated Hamburger Button -->
-        <button 
-          id="mobileMenuBtn" 
-          type="button" 
-          aria-label="Menu" 
-          style="position: relative; z-index: 65; touch-action: manipulation;"
-          class="lg:hidden w-9 h-9 rounded-full flex flex-col items-center justify-center gap-1.5 text-cream hover:text-gold hover:bg-white/10 cursor-pointer transition-colors"
-        >
-          <span id="hamTop" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"></span>
-          <span id="hamMid" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: opacity 0.25s ease, transform 0.35s ease;"></span>
-          <span id="hamBot" style="width: 18px; height: 1.8px; background: currentColor; border-radius: 2px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+        <button id="mobileMenuBtn" type="button" aria-label="Menu" class="hamburger-btn lg:hidden w-9 h-9 rounded-full flex flex-col items-center justify-center gap-1.5 text-cream hover:text-gold hover:bg-white/10 cursor-pointer transition-colors">
+          <span id="hamTop" class="ham-line"></span>
+          <span id="hamMid" class="ham-line"></span>
+          <span id="hamBot" class="ham-line"></span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Backdrop -->
-    <div 
-      id="mobileBackdrop" 
-      style="position: fixed; inset: 0; background: rgba(8, 9, 12, 0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 50;"
-    ></div>
+    <div id="mobileBackdrop" class="mobile-backdrop"></div>
 
-    <!-- Mobile Slide-in Glass Drawer (Side to Center) -->
-    <div 
-      id="mobileMenuWrapper" 
-      style="position: fixed; top: 82px; left: 0; right: 0; padding: 0 14px; overflow: hidden; z-index: 55; pointer-events: none;"
-    >
-      <div 
-        id="mobileMenu" 
-        style="width: 100%; max-width: 420px; margin: 0 auto; background: rgba(18, 20, 27, 0.78); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(214, 182, 121, 0.32); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12); transform: translateX(120%); opacity: 0; pointer-events: none; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;"
-        class="rounded-3xl px-5 py-5"
-      >
+    <!-- Mobile Slide-in Glass Drawer -->
+    <div id="mobileMenuWrapper" class="mobile-menu-wrapper">
+      <div id="mobileMenu" class="mobile-menu-drawer rounded-3xl px-5 py-5">
         <nav class="flex flex-col space-y-1.5 text-sm text-cream/90">
           <a href="./index.html" data-i18n="nav.home" class="px-3.5 py-2.5 rounded-xl hover:text-gold hover:bg-white/10 transition-colors mobile-link">Home</a>
           <a href="./about.html" data-i18n="nav.about" class="px-3.5 py-2.5 rounded-xl text-gold bg-white/10 font-medium mobile-link">About</a>
@@ -171,7 +113,7 @@
     </div>
   </header>
 
-      <!-- About Hero (Full Screen sama seperti Homepage) -->
+  <!-- About Hero -->
   <section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16">
     <div class="absolute inset-0 z-0 pointer-events-none">
       <img 
@@ -195,7 +137,7 @@
       </p>
     </div>
 
-    <!-- Scroll Down Indicator (Sama seperti Homepage) -->
+    <!-- Scroll Down Indicator -->
     <a href="#our-story" class="hidden sm:flex items-center gap-2 text-[11px] tracking-[0.2em] text-cream/70 hover:text-gold transition-colors absolute bottom-8 right-8 md:right-12 z-10">
       <span data-i18n="hero.scroll">Scroll Down</span>
       <span>&darr;</span>
@@ -266,57 +208,6 @@
     </div>
   </section>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      <!-- Left Story Copy -->
-      <div class="lg:col-span-6">
-        <p data-i18n="aboutPage.storyDesc" class="text-sm sm:text-base text-muted leading-relaxed">
-          Every wonder began as a human idea. 7WONDERS gathers their history, architecture, geography and culture into one experience that feels like a museum, an encyclopedia and a travel guide at once.
-        </p>
-      </div>
-
-      <!-- Right 3 Stat Cards -->
-      <div class="lg:col-span-6">
-        <div class="grid grid-cols-3 gap-3 sm:gap-4">
-          <div class="bg-dark-surface border border-white/10 rounded-2xl py-6 px-3 sm:px-5 text-center">
-            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">7</p>
-            <p data-i18n="aboutPage.stat1" class="text-[10px] sm:text-xs text-muted mt-2">The Wonders</p>
-          </div>
-
-          <div class="bg-dark-surface border border-white/10 rounded-2xl py-6 px-3 sm:px-5 text-center">
-            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">4</p>
-            <p data-i18n="aboutPage.stat2" class="text-[10px] sm:text-xs text-muted mt-2">Continents</p>
-          </div>
-
-          <div class="bg-dark-surface border border-white/10 rounded-2xl py-6 px-3 sm:px-5 text-center">
-            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">6,125</p>
-            <p data-i18n="aboutPage.stat3" class="text-[10px] sm:text-xs text-muted mt-2">Years of History</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Two Editorial Standard Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-      <div class="bg-dark-surface border border-white/10 rounded-2xl p-6 sm:p-8">
-        <h3 data-i18n="aboutPage.card1Title" class="font-serif text-2xl sm:text-3xl text-cream mb-3">
-          Our approach to information
-        </h3>
-        <p data-i18n="aboutPage.card1Desc" class="text-xs sm:text-sm text-muted leading-relaxed">
-          Content is educational and based on historical references and UNESCO listings. When sources differ, we prefer cautious wording such as "about" and "around".
-        </p>
-      </div>
-
-      <div class="bg-dark-surface border border-white/10 rounded-2xl p-6 sm:p-8">
-        <h3 data-i18n="aboutPage.card2Title" class="font-serif text-2xl sm:text-3xl text-cream mb-3">
-          Sources &amp; standards
-        </h3>
-        <p data-i18n="aboutPage.card2Desc" class="text-xs sm:text-sm text-muted leading-relaxed">
-          Ticket prices and opening hours always come from official tourism sites and must be checked before travel.
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- The Creators -->
   <section class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
     <div class="text-center mb-12 sm:mb-16">
@@ -364,7 +255,7 @@
     </div>
   </section>
 
-  <!-- Footer (Tidak diubah) -->
+  <!-- Footer -->
   <footer id="contact" class="border-t border-white/10 bg-[#08090B] pt-16 pb-8 px-5 sm:px-8 md:px-12 mt-12">
     <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto flex flex-col items-center text-center">
       
@@ -373,8 +264,7 @@
           src="./assets/images/logo.png" 
           onerror="if(!this.dataset.t){this.dataset.t='1';this.src='./assets/icon/logo.png';}else if(this.dataset.t==='1'){this.dataset.t='2';this.src='./assets/logo.png';}"
           alt="7WONDERS Logo" 
-          class="transition-transform duration-500 group-hover:rotate-45"
-          style="width: 68px; height: 68px; object-fit: contain;"
+          class="footer-logo-img transition-transform duration-500 group-hover:rotate-45"
         >
         <span class="font-serif text-2xl tracking-[0.2em] text-cream font-medium">
           <span class="text-gold">7</span>WONDERS
@@ -461,11 +351,12 @@
         <svg class="w-4 h-4 text-gold/80 absolute left-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
-        <input id="searchInput" data-i18n-placeholder="search.placeholder" type="text" placeholder="Type Colosseum, Petra, Taj Mahal..." style="padding-left: 2.75rem;" class="w-full bg-dark-bg border border-white/15 focus:border-gold rounded-xl pr-4 py-3 text-sm text-cream outline-none transition-colors">
+        <input id="searchInput" data-i18n-placeholder="search.placeholder" type="text" placeholder="Type Colosseum, Petra, Taj Mahal..." class="search-input-icon w-full bg-dark-bg border border-white/15 focus:border-gold rounded-xl pr-4 py-3 text-sm text-cream outline-none transition-colors">
       </div>
       <div id="searchResults" class="mt-4 space-y-2 max-h-60 overflow-y-auto"></div>
     </div>
   </div>
+
   <script src="./js/script.js"></script>
 </body>
 </html>
