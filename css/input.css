@@ -63,23 +63,33 @@
   padding-right: 14px;
 }
 
-.nav-logo {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-.nav-brand-text {
-  font-size: 1rem;
-  letter-spacing: 0.14em;
-}
-
 @media (min-width: 640px) {
   .nav-capsule {
     height: 72px;
-    padding-left: 28px;
-    padding-right: 28px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
+  .nav-logo {
+    width: 44px;
+    height: 44px;
+  }
+  .nav-brand-text {
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-capsule {
+    width: fit-content;
+    gap: 32px;
+  }
+  #mobileMenuBtn,
+  #mobileMenuWrapper,
+  #mobileBackdrop {
+    display: none !important;
+  }
+
   .nav-logo {
     width: 44px;
     height: 44px;
