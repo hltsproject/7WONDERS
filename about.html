@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — 7WONDERS</title>
+  <link rel="icon" type="image/png" href="./assets/images/logo.png">
+  <link rel="apple-touch-icon" href="./assets/images/logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -169,42 +171,100 @@
     </div>
   </header>
 
-    <!-- About Hero -->
-  <section class="relative overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-24">
+      <!-- About Hero (Full Screen sama seperti Homepage) -->
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16">
     <div class="absolute inset-0 z-0 pointer-events-none">
       <img 
         src="./assets/images/about-hero.png" 
         alt="Petra Monastery" 
-        class="w-full h-full object-cover object-[center_35%] opacity-40"
+        class="w-full h-full object-cover object-[center_35%] scale-105"
       >
-      <div class="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/80 to-dark-bg/35"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-dark-bg/65"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-dark-bg/95 via-dark-bg/55 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-dark-bg/40"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12">
+    <div class="relative z-10 w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12">
       <p data-i18n="aboutPage.heroEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.28em] text-gold uppercase mb-3">
         About
       </p>
-      <h1 data-i18n="aboutPage.heroTitle" class="font-serif text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl text-cream font-normal leading-tight max-w-3xl">
+      <h1 data-i18n="aboutPage.heroTitle" class="font-serif text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl text-cream font-normal leading-tight max-w-3xl">
         More than just a journey
       </h1>
-      <p data-i18n="aboutPage.heroSubtitle" class="text-sm sm:text-base text-cream/80 leading-relaxed max-w-md mt-4">
+      <p data-i18n="aboutPage.heroSubtitle" class="text-sm sm:text-base text-cream/80 leading-relaxed max-w-md mt-5">
         7WONDERS is a digital exploration of the world's most extraordinary landmarks.
       </p>
     </div>
+
+    <!-- Scroll Down Indicator (Sama seperti Homepage) -->
+    <a href="#our-story" class="hidden sm:flex items-center gap-2 text-[11px] tracking-[0.2em] text-cream/70 hover:text-gold transition-colors absolute bottom-8 right-8 md:right-12 z-10">
+      <span data-i18n="hero.scroll">Scroll Down</span>
+      <span>&darr;</span>
+    </a>
   </section>
 
-
   <!-- Our Story & Stats -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
-    <div class="mb-6">
+  <section id="our-story" class="py-20 sm:py-28 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
+    <div class="mb-8">
       <p data-i18n="aboutPage.storyEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-2">
         Our Story
       </p>
-      <h2 data-i18n="aboutPage.storyTitle" class="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream font-normal">
+      <h2 data-i18n="aboutPage.storyTitle" class="font-serif text-3xl sm:text-5xl text-cream font-normal">
         Our story
       </h2>
     </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Left Story Copy -->
+      <div class="lg:col-span-6">
+        <p data-i18n="aboutPage.storyDesc" class="text-sm sm:text-base text-muted leading-relaxed">
+          Every wonder began as a human idea. 7WONDERS gathers their history, architecture, geography and culture into one experience that feels like a museum, an encyclopedia and a travel guide at once.
+        </p>
+      </div>
+
+      <!-- Right 3 Stat Cards -->
+      <div class="lg:col-span-6">
+        <div class="grid grid-cols-3 gap-3 sm:gap-5">
+          <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl py-7 px-3 sm:px-5 text-center">
+            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">7</p>
+            <p data-i18n="aboutPage.stat1" class="text-[10px] sm:text-xs text-muted mt-2.5">The Wonders</p>
+          </div>
+
+          <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl py-7 px-3 sm:px-5 text-center">
+            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">4</p>
+            <p data-i18n="aboutPage.stat2" class="text-[10px] sm:text-xs text-muted mt-2.5">Continents</p>
+          </div>
+
+          <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl py-7 px-3 sm:px-5 text-center">
+            <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">6,125</p>
+            <p data-i18n="aboutPage.stat3" class="text-[10px] sm:text-xs text-muted mt-2.5">Years of History</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two Editorial Standard Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+      <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl p-7 sm:p-9">
+        <span class="text-[11px] tracking-[0.25em] text-gold uppercase block mb-3">01</span>
+        <h3 data-i18n="aboutPage.card1Title" class="font-serif text-2xl sm:text-3xl text-cream mb-3">
+          Our approach to information
+        </h3>
+        <p data-i18n="aboutPage.card1Desc" class="text-xs sm:text-sm text-muted leading-relaxed">
+          Content is educational and based on historical references and UNESCO listings. When sources differ, we prefer cautious wording such as "about" and "around".
+        </p>
+      </div>
+
+      <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl p-7 sm:p-9">
+        <span class="text-[11px] tracking-[0.25em] text-gold uppercase block mb-3">02</span>
+        <h3 data-i18n="aboutPage.card2Title" class="font-serif text-2xl sm:text-3xl text-cream mb-3">
+          Sources &amp; standards
+        </h3>
+        <p data-i18n="aboutPage.card2Desc" class="text-xs sm:text-sm text-muted leading-relaxed">
+          Ticket prices and opening hours always come from official tourism sites and must be checked before travel.
+        </p>
+      </div>
+    </div>
+  </section>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       <!-- Left Story Copy -->
