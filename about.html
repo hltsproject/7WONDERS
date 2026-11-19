@@ -28,16 +28,6 @@
       line-height: 1.02;
       letter-spacing: 0.04em;
     }
-
-    .creator-outline {
-      color: transparent;
-      -webkit-text-stroke: 1.2px rgba(245, 243, 239, 0.72);
-      transition: all 0.35s ease;
-    }
-
-    .creator-row:hover .creator-outline {
-      -webkit-text-stroke: 1.2px #D6B679;
-    }
   </style>
 </head>
 <body class="bg-dark-bg text-cream antialiased selection:bg-gold selection:text-dark-bg overflow-x-hidden">
@@ -179,15 +169,16 @@
     </div>
   </header>
 
-  <!-- About Hero -->
-  <section class="relative overflow-hidden about-hero-bg pt-36 pb-20 sm:pt-44 sm:pb-24">
-    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+    <!-- About Hero -->
+  <section class="relative overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-24">
+    <div class="absolute inset-0 z-0 pointer-events-none">
       <img 
-        src="./assets/images/wonders/colosseum.png" 
-        alt="" 
-        class="w-full h-full object-cover object-center"
+        src="./assets/images/about-hero.png" 
+        alt="Petra Monastery" 
+        class="w-full h-full object-cover object-[center_35%] opacity-40"
       >
-      <div class="absolute inset-0 bg-gradient-to-b from-dark-bg/70 via-dark-bg/75 to-dark-bg"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/80 to-dark-bg/35"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-dark-bg/65"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12">
@@ -202,6 +193,7 @@
       </p>
     </div>
   </section>
+
 
   <!-- Our Story & Stats -->
   <section class="py-12 sm:py-16 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
@@ -281,9 +273,9 @@
       <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
         <span class="font-serif text-2xl sm:text-4xl text-gold shrink-0 w-10 sm:w-14">01</span>
         <div>
-          <p data-i18n="aboutPage.role1" class="text-xs sm:text-sm text-muted mb-1.5">Lead Developer</p>
+          <p data-i18n="aboutPage.role1" class="text-xs sm:text-sm text-muted mb-1.5">Developer</p>
           <h3 class="creator-name font-serif text-gold uppercase font-normal">
-            AHMAD FAUZI
+            Alfathussholih
           </h3>
         </div>
       </div>
@@ -292,20 +284,20 @@
       <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
         <span class="font-serif text-2xl sm:text-4xl text-cream/90 shrink-0 w-10 sm:w-14">02</span>
         <div>
-          <p data-i18n="aboutPage.role2" class="text-xs sm:text-sm text-muted mb-1.5">Creative Director</p>
+          <p data-i18n="aboutPage.role2" class="text-xs sm:text-sm text-muted mb-1.5">Designer</p>
           <h3 class="creator-name font-serif text-cream uppercase font-normal">
-            SARAH WIJAYA
+            Faqih Alzawawi
           </h3>
         </div>
       </div>
 
       <!-- Creator 03 -->
       <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
-        <span class="font-serif text-2xl sm:text-4xl text-cream/90 shrink-0 w-10 sm:w-14">03</span>
+        <span class="font-serif text-2xl sm:text-4xl text-gold shrink-0 w-10 sm:w-14">03</span>
         <div>
-          <p data-i18n="aboutPage.role3" class="text-xs sm:text-sm text-muted mb-1.5">Content Specialist</p>
-          <h3 class="creator-name creator-outline font-serif uppercase font-normal">
-            RENDRA PRATAMA
+          <p data-i18n="aboutPage.role3" class="text-xs sm:text-sm text-muted mb-1.5">Quality Assurance</p>
+          <h3 class="creator-name font-serif text-gold uppercase font-normal">
+            Muhammad Arthur
           </h3>
         </div>
       </div>
@@ -414,52 +406,6 @@
       <div id="searchResults" class="mt-4 space-y-2 max-h-60 overflow-y-auto"></div>
     </div>
   </div>
-
   <script src="./js/script.js"></script>
-  <script>
-    Object.assign(translations.en, {
-      "aboutPage.heroEyebrow": "About",
-      "aboutPage.heroTitle": "More than just a journey",
-      "aboutPage.heroSubtitle": "7WONDERS is a digital exploration of the world's most extraordinary landmarks.",
-      "aboutPage.storyEyebrow": "Our Story",
-      "aboutPage.storyTitle": "Our story",
-      "aboutPage.storyDesc": "Every wonder began as a human idea. 7WONDERS gathers their history, architecture, geography and culture into one experience that feels like a museum, an encyclopedia and a travel guide at once.",
-      "aboutPage.stat1": "The Wonders",
-      "aboutPage.stat2": "Continents",
-      "aboutPage.stat3": "Years of History",
-      "aboutPage.card1Title": "Our approach to information",
-      "aboutPage.card1Desc": "Content is educational and based on historical references and UNESCO listings. When sources differ, we prefer cautious wording such as \"about\" and \"around\".",
-      "aboutPage.card2Title": "Sources &amp; standards",
-      "aboutPage.card2Desc": "Ticket prices and opening hours always come from official tourism sites and must be checked before travel.",
-      "aboutPage.creatorsTitle": "THE CREATORS",
-      "aboutPage.creatorsSubtitle": "The minds behind 7WONDERS",
-      "aboutPage.role1": "Lead Developer",
-      "aboutPage.role2": "Creative Director",
-      "aboutPage.role3": "Content Specialist"
-    });
-
-    Object.assign(translations.id, {
-      "aboutPage.heroEyebrow": "Tentang",
-      "aboutPage.heroTitle": "Lebih dari sekadar perjalanan",
-      "aboutPage.heroSubtitle": "7WONDERS adalah eksplorasi digital terhadap monumen paling luar biasa di dunia.",
-      "aboutPage.storyEyebrow": "Kisah Kami",
-      "aboutPage.storyTitle": "Kisah kami",
-      "aboutPage.storyDesc": "Setiap keajaiban berawal dari gagasan manusia. 7WONDERS merangkum sejarah, arsitektur, geografi, dan budayanya dalam satu pengalaman yang terasa seperti museum, ensiklopedia, sekaligus panduan perjalanan.",
-      "aboutPage.stat1": "Keajaiban Dunia",
-      "aboutPage.stat2": "Benua",
-      "aboutPage.stat3": "Tahun Sejarah",
-      "aboutPage.card1Title": "Pendekatan informasi kami",
-      "aboutPage.card1Desc": "Konten bersifat edukatif dan disusun berdasarkan referensi sejarah serta daftar UNESCO. Jika sumber berbeda, kami memilih redaksi yang hati-hati seperti \"sekitar\" dan \"kurang lebih\".",
-      "aboutPage.card2Title": "Sumber &amp; standar",
-      "aboutPage.card2Desc": "Harga tiket dan jam operasional selalu merujuk pada situs pariwisata resmi dan perlu diperiksa kembali sebelum bepergian.",
-      "aboutPage.creatorsTitle": "PARA KREATOR",
-      "aboutPage.creatorsSubtitle": "Sosok di balik 7WONDERS",
-      "aboutPage.role1": "Pengembang Utama",
-      "aboutPage.role2": "Direktur Kreatif",
-      "aboutPage.role3": "Spesialis Konten"
-    });
-
-    applyLanguage(currentLang);
-  </script>
 </body>
 </html>
