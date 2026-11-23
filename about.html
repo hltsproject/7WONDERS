@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — 7WONDERS</title>
+  <title>About 7WONDERS</title>
   <link rel="icon" type="image/png" href="./assets/images/logo.png">
   <link rel="apple-touch-icon" href="./assets/images/logo.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,24 +13,14 @@
 </head>
 <body class="bg-dark-bg text-cream antialiased selection:bg-gold selection:text-dark-bg overflow-x-hidden">
 
-  <!-- Navbar -->
   <header id="navbar" class="site-navbar px-3 sm:px-8 pt-3 sm:pt-5 transition-all duration-300">
     <div id="navGlassContainer" class="nav-glass nav-capsule w-full max-w-7xl 2xl:max-w-[1440px] mx-auto rounded-full flex items-center justify-between gap-2 transition-all duration-300">
-      
-      <!-- Brand Logo -->
       <a href="./index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
-        <img 
-          src="./assets/images/logo.png" 
-          onerror="if(!this.dataset.t){this.dataset.t='1';this.src='./assets/icon/logo.png';}else if(this.dataset.t==='1'){this.dataset.t='2';this.src='./assets/logo.png';}"
-          alt="7WONDERS Logo" 
-          class="nav-logo transition-transform duration-500 group-hover:rotate-45"
-        >
+        <img src="./assets/images/logo.png" onerror="if(!this.dataset.t){this.dataset.t='1';this.src='./assets/icon/logo.png';}else if(this.dataset.t==='1'){this.dataset.t='2';this.src='./assets/logo.png';}" alt="7WONDERS Logo" class="nav-logo transition-transform duration-500 group-hover:rotate-45">
         <span class="nav-brand-text font-serif text-cream font-medium">
           <span class="text-gold">7</span>WONDERS
         </span>
       </a>
-
-      <!-- Desktop Menu -->
       <nav class="hidden lg:flex items-center gap-1 2xl:gap-2 text-xs 2xl:text-sm tracking-wide text-cream/90">
         <a href="./index.html" data-i18n="nav.home" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Home</a>
         <a href="./index.html#map" data-i18n="nav.map" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Map</a>
@@ -42,15 +31,12 @@
         <a href="./contact.html" data-i18n="nav.contact" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Contact</a>
       </nav>
 
-      <!-- Right Actions -->
       <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
         <button id="openSearchBtn" type="button" aria-label="Search" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-cream/90 hover:text-gold hover:bg-white/10 transition-all cursor-pointer">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
         </button>
-
-        <!-- Language Switcher -->
         <div class="relative" id="langWrapper">
           <button id="langToggle" type="button" class="flex items-center gap-1.5 text-xs text-cream/95 hover:text-gold transition-all cursor-pointer py-1.5 px-2.5 sm:py-2 sm:px-3 rounded-full bg-white/10 border border-white/20 hover:border-gold/50">
             <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +46,6 @@
             <span id="langText">EN</span>
             <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-
           <div id="langDropdown" class="lang-dropdown-glass hidden absolute right-0 mt-3 min-w-[165px] rounded-2xl border border-gold/30 shadow-2xl p-2 space-y-1 z-50">
             <button type="button" data-lang="en" class="lang-option w-full px-3.5 py-2 rounded-xl text-left text-xs flex items-center justify-between gap-4 text-gold bg-white/15 cursor-pointer transition-colors">
               <span>English</span>
@@ -72,13 +57,10 @@
             </button>
           </div>
         </div>
-
         <a href="./index.html#wonders" class="hidden sm:flex bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-5 py-2.5 rounded-full items-center gap-1.5 shadow-md transition-all duration-300">
           <span data-i18n="nav.explore">Explore</span>
           <span>&rarr;</span>
         </a>
-
-        <!-- Animated Hamburger Button -->
         <button id="mobileMenuBtn" type="button" aria-label="Menu" class="hamburger-btn lg:hidden w-9 h-9 rounded-full flex flex-col items-center justify-center gap-1.5 text-cream hover:text-gold hover:bg-white/10 cursor-pointer transition-colors">
           <span id="hamTop" class="ham-line"></span>
           <span id="hamMid" class="ham-line"></span>
@@ -86,11 +68,7 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Backdrop -->
     <div id="mobileBackdrop" class="mobile-backdrop"></div>
-
-    <!-- Mobile Slide-in Glass Drawer -->
     <div id="mobileMenuWrapper" class="mobile-menu-wrapper">
       <div id="mobileMenu" class="mobile-menu-drawer rounded-3xl px-5 py-5">
         <nav class="flex flex-col space-y-1.5 text-sm text-cream/90">
@@ -113,18 +91,12 @@
     </div>
   </header>
 
-  <!-- About Hero -->
   <section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16">
     <div class="absolute inset-0 z-0 pointer-events-none">
-      <img 
-        src="./assets/images/about-hero.png" 
-        alt="Petra Monastery" 
-        class="w-full h-full object-cover object-[center_35%] scale-105"
-      >
+      <img src="./assets/images/about-hero.png" alt="Petra Monastery" class="w-full h-full object-cover object-[center_35%] scale-105">
       <div class="absolute inset-0 bg-gradient-to-r from-dark-bg/95 via-dark-bg/55 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-dark-bg/40"></div>
     </div>
-
     <div class="relative z-10 w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12">
       <p data-i18n="aboutPage.heroEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.28em] text-gold uppercase mb-3">
         About
@@ -136,15 +108,12 @@
         7WONDERS is a digital exploration of the world's most extraordinary landmarks.
       </p>
     </div>
-
-    <!-- Scroll Down Indicator -->
     <a href="#our-story" class="hidden sm:flex items-center gap-2 text-[11px] tracking-[0.2em] text-cream/70 hover:text-gold transition-colors absolute bottom-8 right-8 md:right-12 z-10">
       <span data-i18n="hero.scroll">Scroll Down</span>
       <span>&darr;</span>
     </a>
   </section>
 
-  <!-- Our Story & Stats -->
   <section id="our-story" class="py-20 sm:py-28 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
     <div class="mb-8">
       <p data-i18n="aboutPage.storyEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.25em] text-gold uppercase mb-2">
@@ -154,28 +123,22 @@
         Our story
       </h2>
     </div>
-
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      <!-- Left Story Copy -->
       <div class="lg:col-span-6">
         <p data-i18n="aboutPage.storyDesc" class="text-sm sm:text-base text-muted leading-relaxed">
           Every wonder began as a human idea. 7WONDERS gathers their history, architecture, geography and culture into one experience that feels like a museum, an encyclopedia and a travel guide at once.
         </p>
       </div>
-
-      <!-- Right 3 Stat Cards -->
       <div class="lg:col-span-6">
         <div class="grid grid-cols-3 gap-3 sm:gap-5">
           <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl py-7 px-3 sm:px-5 text-center">
             <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">7</p>
             <p data-i18n="aboutPage.stat1" class="text-[10px] sm:text-xs text-muted mt-2.5">The Wonders</p>
           </div>
-
           <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl py-7 px-3 sm:px-5 text-center">
             <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">4</p>
             <p data-i18n="aboutPage.stat2" class="text-[10px] sm:text-xs text-muted mt-2.5">Continents</p>
           </div>
-
           <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl py-7 px-3 sm:px-5 text-center">
             <p class="font-serif text-3xl sm:text-4xl text-gold leading-none">6,125</p>
             <p data-i18n="aboutPage.stat3" class="text-[10px] sm:text-xs text-muted mt-2.5">Years of History</p>
@@ -183,8 +146,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Two Editorial Standard Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
       <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl p-7 sm:p-9">
         <span class="text-[11px] tracking-[0.25em] text-gold uppercase block mb-3">01</span>
@@ -195,7 +156,6 @@
           Content is educational and based on historical references and UNESCO listings. When sources differ, we prefer cautious wording such as "about" and "around".
         </p>
       </div>
-
       <div class="bg-dark-surface border border-white/10 hover:border-gold/40 transition-all duration-300 rounded-2xl p-7 sm:p-9">
         <span class="text-[11px] tracking-[0.25em] text-gold uppercase block mb-3">02</span>
         <h3 data-i18n="aboutPage.card2Title" class="font-serif text-2xl sm:text-3xl text-cream mb-3">
@@ -208,7 +168,6 @@
     </div>
   </section>
 
-  <!-- The Creators -->
   <section class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
     <div class="text-center mb-12 sm:mb-16">
       <h2 data-i18n="aboutPage.creatorsTitle" class="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-[0.06em] text-cream uppercase">
@@ -218,9 +177,7 @@
         The minds behind 7WONDERS
       </p>
     </div>
-
     <div class="border-t border-white/10">
-      <!-- Creator 01 -->
       <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
         <span class="font-serif text-2xl sm:text-4xl text-gold shrink-0 w-10 sm:w-14">01</span>
         <div>
@@ -230,8 +187,6 @@
           </h3>
         </div>
       </div>
-
-      <!-- Creator 02 -->
       <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
         <span class="font-serif text-2xl sm:text-4xl text-cream/90 shrink-0 w-10 sm:w-14">02</span>
         <div>
@@ -241,8 +196,6 @@
           </h3>
         </div>
       </div>
-
-      <!-- Creator 03 -->
       <div class="creator-row border-b border-white/10 py-7 sm:py-10 flex items-center gap-6 sm:gap-14">
         <span class="font-serif text-2xl sm:text-4xl text-gold shrink-0 w-10 sm:w-14">03</span>
         <div>
@@ -255,10 +208,8 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer id="contact" class="border-t border-white/10 bg-[#08090B] pt-16 pb-8 px-5 sm:px-8 md:px-12 mt-12">
     <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto flex flex-col items-center text-center">
-      
       <a href="./index.html" class="flex flex-col items-center gap-2 group">
         <img 
           src="./assets/images/logo.png" 
@@ -273,20 +224,12 @@
       <p data-i18n="footer.tagline" class="text-xs text-muted mt-1.5">Seven Wonders. Infinite Stories.</p>
 
       <form id="newsletterForm" class="mt-6 w-full max-w-md flex flex-col sm:flex-row items-center gap-2.5">
-        <input 
-          type="email" 
-          id="newsletterEmail"
-          data-i18n-placeholder="footer.emailPlaceholder"
-          required
-          placeholder="Your Email Address" 
-          class="w-full bg-dark-surface border border-white/10 focus:border-gold outline-none rounded-full px-5 py-2.5 text-xs text-cream placeholder:text-muted"
-        >
+        <input type="email" id="newsletterEmail" data-i18n-placeholder="footer.emailPlaceholder" required placeholder="Your Email Address" class="w-full bg-dark-surface border border-white/10 focus:border-gold outline-none rounded-full px-5 py-2.5 text-xs text-cream placeholder:text-muted">
         <button type="submit" data-i18n="footer.subscribe" class="w-full sm:w-auto bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-6 py-2.5 rounded-full transition-colors cursor-pointer shrink-0">
           Subscribe
         </button>
       </form>
       <p id="newsletterMsg" data-i18n="footer.subscribed" class="text-xs text-gold mt-2 hidden">Thank you for subscribing to 7WONDERS!</p>
-
       <div class="flex items-center gap-3 mt-8">
         <a href="#contact" aria-label="Instagram" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -304,7 +247,6 @@
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
         </a>
       </div>
-
       <nav class="flex flex-wrap justify-center gap-6 sm:gap-8 text-xs text-cream/75 mt-8">
         <a href="./index.html" data-i18n="nav.home" class="hover:text-gold transition-colors">Home</a>
         <a href="./index.html#wonders" data-i18n="nav.wonders" class="hover:text-gold transition-colors">The Wonders</a>
@@ -315,7 +257,6 @@
         <a href="./about.html" data-i18n="nav.about" class="hover:text-gold transition-colors">About</a>
         <a href="./contact.html" data-i18n="nav.contact" class="hover:text-gold transition-colors">Contact</a>
       </nav>
-
       <div class="w-full border-t border-white/5 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-muted">
         <p data-i18n="footer.rights">&copy; 2026 7WONDERS</p>
         <div class="flex items-center gap-4">
@@ -327,20 +268,15 @@
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
   <button id="scrollTopBtn" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-gold hover:bg-gold-hover text-dark-bg flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none cursor-pointer">
     &uarr;
   </button>
-
-  <!-- Modal Detail -->
   <div id="detailModal" class="hidden fixed inset-0 z-50 bg-dark-bg/85 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-dark-surface border border-gold/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
       <button id="closeModalBtn" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-dark-bg/80 text-cream hover:text-gold flex items-center justify-center cursor-pointer">&times;</button>
       <div id="modalBody"></div>
     </div>
   </div>
-
-  <!-- Modal Search -->
   <div id="searchModal" class="hidden fixed inset-0 z-50 bg-dark-bg/90 backdrop-blur-md flex items-start justify-center pt-24 p-4">
     <div id="searchBox" class="bg-dark-surface border border-gold/30 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
       <div class="flex items-center justify-between mb-4">
@@ -356,7 +292,6 @@
       <div id="searchResults" class="mt-4 space-y-2 max-h-60 overflow-y-auto"></div>
     </div>
   </div>
-
   <script src="./js/script.js"></script>
 </body>
 </html>
