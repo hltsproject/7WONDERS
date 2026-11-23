@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — 7WONDERS</title>
+  <title>Contact 7WONDERS</title>
   <link rel="icon" type="image/png" href="./assets/images/logo.png">
   <link rel="apple-touch-icon" href="./assets/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="./css/output.css">
 </head>
 <body class="bg-dark-bg text-cream antialiased selection:bg-gold selection:text-dark-bg overflow-x-hidden">
-
-  <!-- Navbar -->
   <header id="navbar" class="site-navbar px-3 sm:px-8 pt-3 sm:pt-5 transition-all duration-300">
     <div id="navGlassContainer" class="nav-glass nav-capsule w-full max-w-7xl 2xl:max-w-[1440px] mx-auto rounded-full flex items-center justify-between gap-2 transition-all duration-300">
       <a href="./index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
@@ -26,8 +24,7 @@
           <span class="text-gold">7</span>WONDERS
         </span>
       </a>
-
-      <!-- Desktop Menu -->
+      
       <nav class="hidden lg:flex items-center gap-1 2xl:gap-2 text-xs 2xl:text-sm tracking-wide text-cream/90">
         <a href="./index.html" data-i18n="nav.home" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Home</a>
         <a href="./index.html#map" data-i18n="nav.map" class="px-3.5 py-2 rounded-full hover:text-gold hover:bg-white/10 transition-all">Map</a>
@@ -38,15 +35,12 @@
         <a href="./contact.html" data-i18n="nav.contact" class="px-3.5 py-2 rounded-full text-gold bg-white/10 font-medium transition-all">Contact</a>
       </nav>
 
-      <!-- Right Actions -->
       <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
         <button id="openSearchBtn" type="button" aria-label="Search" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-cream/90 hover:text-gold hover:bg-white/10 transition-all cursor-pointer">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
         </button>
-
-        <!-- Language Switcher -->
         <div class="relative" id="langWrapper">
           <button id="langToggle" type="button" class="flex items-center gap-1.5 text-xs text-cream/95 hover:text-gold transition-all cursor-pointer py-1.5 px-2.5 sm:py-2 sm:px-3 rounded-full bg-white/10 border border-white/20 hover:border-gold/50">
             <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +50,6 @@
             <span id="langText">EN</span>
             <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-
           <div id="langDropdown" class="lang-dropdown-glass hidden absolute right-0 mt-3 min-w-[165px] rounded-2xl border border-gold/30 shadow-2xl p-2 space-y-1 z-50">
             <button type="button" data-lang="en" class="lang-option w-full px-3.5 py-2 rounded-xl text-left text-xs flex items-center justify-between gap-4 text-gold bg-white/15 cursor-pointer transition-colors">
               <span>English</span>
@@ -68,13 +61,10 @@
             </button>
           </div>
         </div>
-
         <a href="./index.html#wonders" class="hidden sm:flex bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-5 py-2.5 rounded-full items-center gap-1.5 shadow-md transition-all duration-300">
           <span data-i18n="nav.explore">Explore</span>
           <span>&rarr;</span>
         </a>
-
-        <!-- Animated Hamburger Button -->
         <button id="mobileMenuBtn" type="button" aria-label="Menu" class="hamburger-btn lg:hidden w-9 h-9 rounded-full flex flex-col items-center justify-center gap-1.5 text-cream hover:text-gold hover:bg-white/10 cursor-pointer transition-colors">
           <span id="hamTop" class="ham-line"></span>
           <span id="hamMid" class="ham-line"></span>
@@ -82,11 +72,7 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Backdrop -->
     <div id="mobileBackdrop" class="mobile-backdrop"></div>
-
-    <!-- Mobile Slide-in Glass Drawer -->
     <div id="mobileMenuWrapper" class="mobile-menu-wrapper">
       <div id="mobileMenu" class="mobile-menu-drawer rounded-3xl px-5 py-5">
         <nav class="flex flex-col space-y-1.5 text-sm text-cream/90">
@@ -109,19 +95,12 @@
     </div>
   </header>
 
-  <!-- 01 — GET IN TOUCH (Full Screen Hero) -->
   <section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16">
-    <!-- Background Image -->
     <div class="absolute inset-0 z-0 pointer-events-none">
-      <img 
-        src="./assets/images/wonders/chicen itza-section 1.png" 
-        alt="Petra Sandstone Cliff" 
-        class="contact-hero-img w-full h-full object-cover object-center scale-105"
-      >
+      <img src="./assets/images/wonders/chicen itza-section 1.png" alt="Petra Sandstone Cliff" class="contact-hero-img w-full h-full object-cover object-center scale-105">
       <div class="absolute inset-0 bg-gradient-to-r from-dark-bg/95 via-dark-bg/55 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/20 to-dark-bg/40"></div>
     </div>
-
     <div class="relative z-10 w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12">
       <div class="max-w-2xl">
         <p data-i18n="contactPage.heroEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.28em] text-gold uppercase mb-3">
@@ -135,19 +114,14 @@
         </p>
       </div>
     </div>
-
-    <!-- Scroll Down Indicator -->
     <a href="#reservasi" class="hidden sm:flex items-center gap-2 text-[11px] tracking-[0.2em] text-cream/70 hover:text-gold transition-colors absolute bottom-8 right-8 md:right-12 z-10">
       <span data-i18n="hero.scroll">Scroll Down</span>
       <span>&darr;</span>
     </a>
   </section>
 
-  <!-- 02 — RESERVASI & KONTAK LANGSUNG -->
   <section id="reservasi" class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-      
-      <!-- Left Column: Reservation Form -->
       <div class="contact-col-main w-full">
         <p data-i18n="contactPage.resEyebrow" class="text-[11px] 2xl:text-xs tracking-[0.28em] text-gold uppercase mb-2">
           02 &mdash; RESERVASI
@@ -157,56 +131,26 @@
         </h2>
 
         <form id="contactForm" class="space-y-6">
-          <!-- Row 1: Nama Lengkap & Email -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label for="contactName" class="block text-[11px] tracking-[0.18em] text-cream/85 uppercase mb-2">
                 <span data-i18n="contactPage.labelName">NAMA LENGKAP</span> <span class="text-gold">*</span>
               </label>
-              <input 
-                type="text" 
-                id="contactName" 
-                name="name"
-                required
-                data-i18n-placeholder="contactPage.phName"
-                placeholder="fulan"
-                class="w-full bg-transparent border-b border-white/20 focus:border-gold py-2.5 text-sm text-cream placeholder:text-muted outline-none transition-colors"
-              >
+              <input type="text" id="contactName" name="name" required data-i18n-placeholder="contactPage.phName" placeholder="fulan" class="w-full bg-transparent border-b border-white/20 focus:border-gold py-2.5 text-sm text-cream placeholder:text-muted outline-none transition-colors">
             </div>
-
             <div>
               <label for="contactEmail" class="block text-[11px] tracking-[0.18em] text-cream/85 uppercase mb-2">
                 <span data-i18n="contactPage.labelEmail">EMAIL</span> <span class="text-gold">*</span>
               </label>
-              <input 
-                type="email" 
-                id="contactEmail" 
-                name="email"
-                required
-                data-i18n-placeholder="contactPage.phEmail"
-                placeholder="fulan@gmail.com"
-                class="w-full bg-transparent border-b border-white/20 focus:border-gold py-2.5 text-sm text-cream placeholder:text-muted outline-none transition-colors"
-              >
+              <input type="email" id="contactEmail" name="email" required data-i18n-placeholder="contactPage.phEmail" placeholder="fulan@gmail.com" class="w-full bg-transparent border-b border-white/20 focus:border-gold py-2.5 text-sm text-cream placeholder:text-muted outline-none transition-colors">
             </div>
           </div>
-
-          <!-- Row 2: Subjek / Rencana Perjalanan -->
           <div>
             <label for="contactSubject" class="block text-[11px] tracking-[0.18em] text-cream/85 uppercase mb-2">
               <span data-i18n="contactPage.labelSubject">SUBJEK / RENCANA</span> <span class="text-gold">*</span>
             </label>
-            <input 
-              type="text" 
-              id="contactSubject" 
-              name="subject"
-              required
-              data-i18n-placeholder="contactPage.phSubject"
-              placeholder="Cari petualanganmu..."
-              class="w-full bg-transparent border-b border-white/20 focus:border-gold py-2.5 text-sm text-cream placeholder:text-muted outline-none transition-colors"
-            >
+            <input type="text" id="contactSubject" name="subject" required data-i18n-placeholder="contactPage.phSubject" placeholder="Cari petualanganmu..." class="w-full bg-transparent border-b border-white/20 focus:border-gold py-2.5 text-sm text-cream placeholder:text-muted outline-none transition-colors">
           </div>
-
-          <!-- Row 3: Keajaiban Tujuan (Selectable Pills) -->
           <div>
             <label data-i18n="contactPage.labelWonder" class="block text-[11px] tracking-[0.18em] text-cream/85 uppercase mb-3">
               KEAJAIBAN TUJUAN
@@ -236,29 +180,14 @@
               </button>
             </div>
           </div>
-
-          <!-- Row 4: Pesan -->
           <div>
             <label for="contactMessage" class="block text-[11px] tracking-[0.18em] text-cream/85 uppercase mb-2.5">
               <span data-i18n="contactPage.labelMessage">PESAN</span> <span class="text-gold">*</span>
             </label>
-            <textarea 
-              id="contactMessage" 
-              name="message"
-              rows="5"
-              required
-              data-i18n-placeholder="contactPage.phMessage"
-              placeholder="Rencana tanggal, jumlah orang, pengalaman menarik..."
-              class="w-full bg-dark-surface border border-white/15 focus:border-gold rounded-2xl p-4 text-sm text-cream placeholder:text-muted outline-none transition-colors"
-            ></textarea>
+            <textarea id="contactMessage" name="message" rows="5" required data-i18n-placeholder="contactPage.phMessage" placeholder="Rencana tanggal, jumlah orang, pengalaman menarik..." class="w-full bg-dark-surface border border-white/15 focus:border-gold rounded-2xl p-4 text-sm text-cream placeholder:text-muted outline-none transition-colors"></textarea>
           </div>
-
-          <!-- Row 5: Submit CTA & Fast Response Note -->
           <div class="flex flex-wrap items-center gap-4 pt-2">
-            <button 
-              type="submit" 
-              class="bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold tracking-wider uppercase px-6 py-3 rounded-full inline-flex items-center gap-2 shadow-md transition-all duration-300 cursor-pointer"
-            >
+            <button type="submit" class="bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold tracking-wider uppercase px-6 py-3 rounded-full inline-flex items-center gap-2 shadow-md transition-all duration-300 cursor-pointer">
               <span data-i18n="contactPage.submitBtn">KIRIM PESAN</span>
               <span>&rarr;</span>
             </button>
@@ -266,22 +195,16 @@
               Respon cepat &mdash; kami akan membalas secepatnya
             </p>
           </div>
-
-          <!-- Form Feedback Alert -->
           <div id="contactFormFeedback" class="hidden rounded-2xl bg-dark-surface border border-gold/40 p-4 text-xs text-cream/90 leading-relaxed"></div>
         </form>
       </div>
-
-      <!-- Right Column: Direct Contact Info -->
       <div class="contact-col-side w-full pt-4">
         <div class="border-b border-white/10 pb-3 mb-6">
           <h3 data-i18n="contactPage.directTitle" class="text-[11px] tracking-[0.25em] text-muted uppercase">
             KONTAK LANGSUNG
           </h3>
         </div>
-
         <div class="space-y-6">
-          <!-- Email + Copy -->
           <div>
             <p class="text-[11px] tracking-[0.2em] text-muted uppercase mb-1.5">EMAIL</p>
             <div class="flex flex-wrap items-center gap-3">
@@ -298,32 +221,24 @@
               </button>
             </div>
           </div>
-
-          <!-- WhatsApp -->
           <div>
             <p class="text-[11px] tracking-[0.2em] text-muted uppercase mb-1.5">WHATSAPP</p>
             <a href="https://wa.me/6281200007777" target="_blank" rel="noopener noreferrer" class="text-lg sm:text-2xl text-cream hover:text-gold font-medium transition-colors">
               +62 0815 5789 5487
             </a>
           </div>
-
-          <!-- Jam Kerja -->
           <div>
             <p data-i18n="contactPage.hoursLabel" class="text-[11px] tracking-[0.2em] text-muted uppercase mb-1.5">JAM KERJA</p>
             <p data-i18n="contactPage.hoursValue" class="text-lg sm:text-2xl text-cream font-medium leading-snug">
               Senin - Sabtu, 08.00 - 20.00 WIB
             </p>
           </div>
-
-          <!-- Basecamp -->
           <div>
             <p class="text-[11px] tracking-[0.2em] text-muted uppercase mb-1.5">BASECAMP</p>
             <p class="text-lg sm:text-2xl text-cream font-medium">
               Yogyakarta, Indonesia
             </p>
           </div>
-
-          <!-- Sosial Media -->
           <div>
             <p data-i18n="contactPage.socialLabel" class="text-[11px] tracking-[0.2em] text-muted uppercase mb-3">SOSIAL MEDIA</p>
             <div class="flex items-center gap-3">
@@ -340,26 +255,18 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- 03 — FAQ (SERING DITANYAKAN) -->
   <section id="faq" class="py-16 sm:py-24 px-5 sm:px-8 md:px-12 max-w-7xl 2xl:max-w-[1440px] mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-      
-      <!-- Left Title -->
       <div class="contact-col-side">
         <p class="text-[11px] 2xl:text-xs tracking-[0.28em] text-gold uppercase mb-2">FAQ</p>
         <h2 data-i18n="contactPage.faqTitle" class="contact-section-title font-sans text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-cream">
           SERING<br>DITANYAKAN
         </h2>
       </div>
-
-      <!-- Right Accordion -->
       <div class="contact-col-main border-b border-white/10">
-        
-        <!-- FAQ 1 -->
         <div class="faq-item border-t border-white/10 py-5">
           <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left group cursor-pointer">
             <span data-i18n="contactPage.faqQ1" class="text-sm sm:text-base font-medium text-cream group-hover:text-gold transition-colors">
@@ -373,8 +280,6 @@
             </p>
           </div>
         </div>
-
-        <!-- FAQ 2 -->
         <div class="faq-item border-t border-white/10 py-5">
           <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left group cursor-pointer">
             <span data-i18n="contactPage.faqQ2" class="text-sm sm:text-base font-medium text-cream group-hover:text-gold transition-colors">
@@ -388,8 +293,6 @@
             </p>
           </div>
         </div>
-
-        <!-- FAQ 3 -->
         <div class="faq-item border-t border-white/10 py-5">
           <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left group cursor-pointer">
             <span data-i18n="contactPage.faqQ3" class="text-sm sm:text-base font-medium text-cream group-hover:text-gold transition-colors">
@@ -403,8 +306,6 @@
             </p>
           </div>
         </div>
-
-        <!-- FAQ 4 -->
         <div class="faq-item border-t border-white/10 py-5">
           <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left group cursor-pointer">
             <span data-i18n="contactPage.faqQ4" class="text-sm sm:text-base font-medium text-cream group-hover:text-gold transition-colors">
@@ -418,12 +319,10 @@
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer id="contact" class="border-t border-white/10 bg-[#08090B] pt-16 pb-8 px-5 sm:px-8 md:px-12 mt-12">
     <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto flex flex-col items-center text-center">
       
@@ -439,22 +338,13 @@
         </span>
       </a>
       <p data-i18n="footer.tagline" class="text-xs text-muted mt-1.5">Seven Wonders. Infinite Stories.</p>
-
       <form id="newsletterForm" class="mt-6 w-full max-w-md flex flex-col sm:flex-row items-center gap-2.5">
-        <input 
-          type="email" 
-          id="newsletterEmail"
-          data-i18n-placeholder="footer.emailPlaceholder"
-          required
-          placeholder="Your Email Address" 
-          class="w-full bg-dark-surface border border-white/10 focus:border-gold outline-none rounded-full px-5 py-2.5 text-xs text-cream placeholder:text-muted"
-        >
+        <input type="email" id="newsletterEmail" data-i18n-placeholder="footer.emailPlaceholder" required placeholder="Your Email Address" class="w-full bg-dark-surface border border-white/10 focus:border-gold outline-none rounded-full px-5 py-2.5 text-xs text-cream placeholder:text-muted">
         <button type="submit" data-i18n="footer.subscribe" class="w-full sm:w-auto bg-gold hover:bg-gold-hover text-dark-bg text-xs font-semibold px-6 py-2.5 rounded-full transition-colors cursor-pointer shrink-0">
           Subscribe
         </button>
       </form>
       <p id="newsletterMsg" data-i18n="footer.subscribed" class="text-xs text-gold mt-2 hidden">Thank you for subscribing to 7WONDERS!</p>
-
       <div class="flex items-center gap-3 mt-8">
         <a href="#contact" aria-label="Instagram" class="w-9 h-9 rounded-full bg-dark-surface border border-white/10 hover:border-gold text-cream/80 hover:text-gold flex items-center justify-center transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -472,7 +362,6 @@
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
         </a>
       </div>
-
       <nav class="flex flex-wrap justify-center gap-6 sm:gap-8 text-xs text-cream/75 mt-8">
         <a href="./index.html" data-i18n="nav.home" class="hover:text-gold transition-colors">Home</a>
         <a href="./index.html#wonders" data-i18n="nav.wonders" class="hover:text-gold transition-colors">The Wonders</a>
@@ -483,7 +372,6 @@
         <a href="./about.html" data-i18n="nav.about" class="hover:text-gold transition-colors">About</a>
         <a href="./contact.html" data-i18n="nav.contact" class="hover:text-gold transition-colors">Contact</a>
       </nav>
-
       <div class="w-full border-t border-white/5 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-muted">
         <p data-i18n="footer.rights">&copy; 2026 7WONDERS.</p>
         <div class="flex items-center gap-4">
@@ -494,21 +382,15 @@
       </div>
     </div>
   </footer>
-
-  <!-- Scroll to Top -->
   <button id="scrollTopBtn" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-gold hover:bg-gold-hover text-dark-bg flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 pointer-events-none cursor-pointer">
     &uarr;
   </button>
-
-  <!-- Modal Detail -->
   <div id="detailModal" class="hidden fixed inset-0 z-50 bg-dark-bg/85 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-dark-surface border border-gold/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative">
       <button id="closeModalBtn" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-dark-bg/80 text-cream hover:text-gold flex items-center justify-center cursor-pointer">&times;</button>
       <div id="modalBody"></div>
     </div>
   </div>
-
-  <!-- Modal Search -->
   <div id="searchModal" class="hidden fixed inset-0 z-50 bg-dark-bg/90 backdrop-blur-md flex items-start justify-center pt-24 p-4">
     <div id="searchBox" class="bg-dark-surface border border-gold/30 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
       <div class="flex items-center justify-between mb-4">
@@ -524,7 +406,6 @@
       <div id="searchResults" class="mt-4 space-y-2 max-h-60 overflow-y-auto"></div>
     </div>
   </div>
-
   <script src="./js/script.js"></script>
 </body>
 </html>
