@@ -232,14 +232,5 @@ footer#contact {
   background-position: center bottom;
   background-repeat: no-repeat;
 }
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-.site-navbar,
-.nav-glass {
-  transform: translateZ(0);
-}
 
 
