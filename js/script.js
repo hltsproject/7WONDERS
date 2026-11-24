@@ -1,4 +1,3 @@
-
 const translations = {
   en: {
     "nav.home": "Home",
@@ -471,10 +470,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-scrollTopBtn?.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
 // Detail Modal
 const detailModal = document.getElementById("detailModal");
 const modalBody = document.getElementById("modalBody");
@@ -772,7 +767,6 @@ faqToggles.forEach(toggle => {
     const icon = toggle.querySelector(".faq-icon");
     const isOpen = answer && !answer.classList.contains("hidden");
 
-    // Tutup item lain agar rapi
     document.querySelectorAll(".faq-item").forEach(other => {
       other.querySelector(".faq-answer")?.classList.add("hidden");
       const otherIcon = other.querySelector(".faq-icon");
@@ -790,6 +784,83 @@ faqToggles.forEach(toggle => {
       }
     }
   });
+});
+
+// ==========================================
+// SMOOTH WHEEL SCROLL
+// ==========================================
+let currentScroll = window.scrollY;
+let targetScroll = window.scrollY;
+let isAnimating = false;
+const ease = 0.12; // Makin kecil makin lembut, makin besar makin cepat berhenti
+
+function updateSmoothScroll() {
+  const diff = targetScroll - currentScroll;
+
+  if (Math.abs(diff) > 0.5) {
+    currentScroll += diff * ease;
+    window.scrollTo(0, currentScroll);
+    requestAnimationFrame(updateSmoothScroll);
+  } else {
+    currentScroll = targetScroll;
+    window.scrollTo(0, currentScroll);
+    isAnimating = false;
+  }
+}
+
+function startSmoothScroll() {
+  if (!isAnimating) {
+    isAnimating = true;
+    requestAnimationFrame(updateSmoothScroll);
+  }
+}
+
+window.addEventListener("wheel", (e) => {
+  const isDetailOpen = detailModal && !detailModal.classList.contains("hidden");
+  const isSearchOpen = searchModal && !searchModal.classList.contains("hidden");
+  if (isDetailOpen || isSearchOpen || isMobileMenuOpen) return;
+
+  e.preventDefault();
+
+  if (!isAnimating) {
+    currentScroll = window.scrollY;
+    targetScroll = window.scrollY;
+  }
+
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  targetScroll = Math.max(0, Math.min(targetScroll + e.deltaY, maxScroll));
+  startSmoothScroll();
+}, { passive: false });
+
+window.addEventListener("scroll", () => {
+  if (!isAnimating) {
+    currentScroll = window.scrollY;
+    targetScroll = window.scrollY;
+  }
+});
+
+// Klik menu navbar (#wonders, #map, #reservasi, dll) ikut meluncur halus
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (e) => {
+    const id = anchor.getAttribute("href");
+    if (!id || id === "#") return;
+    const targetEl = document.querySelector(id);
+    if (!targetEl) return;
+
+    e.preventDefault();
+    if (!isAnimating) currentScroll = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const offsetTop = targetEl.getBoundingClientRect().top + window.scrollY - 80;
+    targetScroll = Math.max(0, Math.min(offsetTop, maxScroll));
+    startSmoothScroll();
+  });
+});
+
+// Tombol panah ke atas
+scrollTopBtn?.addEventListener("click", () => {
+  if (!isAnimating) currentScroll = window.scrollY;
+  targetScroll = 0;
+  startSmoothScroll();
 });
 
 // Apply Saved Language on Load
