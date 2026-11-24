@@ -1,3 +1,38 @@
+let lenis;
+
+if (typeof Lenis !== "undefined") {
+  lenis = new Lenis({
+    duration: 1.2, // Makin besar makin pelan/lembut (default 1.2)
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Kurva gerak halus
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    touchMultiplier: 1.5,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Bikin semua anchor link (#explore, #timeline, #contact, dll) ikut smooth
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#" || !targetId) return;
+
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        lenis.scrollTo(targetEl, {
+          offset: -80,
+          duration: 1.4,
+        });
+      }
+    });
+  });
+}
+
 const translations = {
   en: {
     "nav.home": "Home",
