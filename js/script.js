@@ -206,7 +206,7 @@ const wondersData = [
     location: { en: "China · Asia", id: "Tiongkok · Asia" },
     year: "c. 700 BC",
     mapQuery: "Great+Wall+of+China,+Mutianyu",
-    image: "./assets/images/wonders/great-wall.png",
+    image: "./assets/images/wonders/great-wall.webp",
     fallback: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=80",
     description: {
       en: "Stretching over 21,000 kilometers across northern China, this monumental fortification was built across centuries to protect ancient Chinese states and empires.",
@@ -219,7 +219,7 @@ const wondersData = [
     location: { en: "Jordan · Asia", id: "Yordania · Asia" },
     year: "c. 300 BC",
     mapQuery: "Petra,+Jordan",
-    image: "./assets/images/wonders/petra.png",
+    image: "./assets/images/wonders/petra.webp",
     description: {
       en: "Carved directly into vibrant rose-red sandstone cliffs by the Nabataeans, Petra served as a thriving desert trading hub with ingenious water conduit systems.",
       id: "Dipahat langsung pada tebing batu pasir merah muda oleh bangsa Nabath, Petra berfungsi sebagai pusat perdagangan gurun yang makmur dengan sistem saluran air yang cerdik."
@@ -231,7 +231,7 @@ const wondersData = [
     location: { en: "Italy · Europe", id: "Italia · Eropa" },
     year: "c. 70 AD",
     mapQuery: "Colosseum,+Rome,+Italy",
-    image: "./assets/images/wonders/colosseum.png",
+    image: "./assets/images/wonders/colosseum.webp",
     description: {
       en: "The largest ancient amphitheater ever built, capable of holding up to 80,000 spectators in the heart of Rome for gladiatorial contests and public spectacles.",
       id: "Amfiteater kuno terbesar yang pernah dibangun, mampu menampung hingga 80.000 penonton di jantung kota Roma untuk pertarungan gladiator dan pertunjukan publik."
@@ -243,7 +243,7 @@ const wondersData = [
     location: { en: "Mexico · North America", id: "Meksiko · Amerika Utara" },
     year: "c. 600 AD",
     mapQuery: "Chichen+Itza,+Yucatan,+Mexico",
-    image: "./assets/images/wonders/chicen itza.png",
+    image: "./assets/images/wonders/chicen itza.webp",
     description: {
       en: "A major Maya city on the Yucatán Peninsula, anchored by the El Castillo step pyramid which demonstrates extraordinary astronomical precision.",
       id: "Kota besar peradaban Maya di Semenanjung Yucatán, dengan piramida berundak El Castillo sebagai pusatnya yang menunjukkan ketelitian astronomi luar biasa."
@@ -255,7 +255,7 @@ const wondersData = [
     location: { en: "Peru · South America", id: "Peru · Amerika Selatan" },
     year: "c. 1450 AD",
     mapQuery: "Machu+Picchu,+Peru",
-    image: "./assets/images/wonders/matchu pichu.png",
+    image: "./assets/images/wonders/matchu pichu.webp",
     description: {
       en: "Set high in the Andes Mountains at 2,430 meters, this 15th-century Inca citadel showcases dry-stone walls fused seamlessly with dramatic mountain peaks.",
       id: "Terletak tinggi di Pegunungan Andes pada ketinggian 2.430 meter, benteng Inca abad ke-15 ini menampilkan dinding batu kering yang menyatu harmonis dengan puncak gunung."
@@ -267,7 +267,7 @@ const wondersData = [
     location: { en: "India · Asia", id: "India · Asia" },
     year: "1632 AD",
     mapQuery: "Taj+Mahal,+Agra,+India",
-    image: "./assets/images/wonders/tajmahal.png",
+    image: "./assets/images/wonders/tajmahal.webp",
     description: {
       en: "Commissioned by Mughal emperor Shah Jahan in Agra, this ivory-white marble mausoleum stands as an enduring symbol of devotion and Mughal architecture.",
       id: "Dibangun atas perintah Kaisar Mughal Shah Jahan di Agra, mausoleum marmer putih gading ini berdiri sebagai simbol abadi cinta dan puncak arsitektur Mughal."
@@ -279,7 +279,7 @@ const wondersData = [
     location: { en: "Brazil · South America", id: "Brasil · Amerika Selatan" },
     year: "1931 AD",
     mapQuery: "Christ+the+Redeemer,+Rio+de+Janeiro,+Brazil",
-    image: "./assets/images/wonders/christ the redeemer.png",
+    image: "./assets/images/wonders/christ the redeemer.webp",
     description: {
       en: "Standing 30 meters tall atop Mount Corcovado overlooking Rio de Janeiro, this Art Deco statue has become a global icon of peace and hospitality.",
       id: "Berdiri setinggi 30 meter di puncak Gunung Corcovado menghadap Rio de Janeiro, patung bergaya Art Deco ini telah menjadi ikon global perdamaian dan keramahan."
@@ -291,7 +291,7 @@ const storiesData = [
   {
     title: { en: "The Mystery Behind Petra", id: "Misteri di Balik Petra" },
     meta: { en: "6 min read · Archaeology & History", id: "6 mnt baca · Arkeologi & Sejarah" },
-    image: "./assets/images/wonders/petra.png",
+    image: "./assets/images/wonders/petra.webp",
     content: {
       en: "Hidden behind narrow canyon walls known as the Siq, Petra remained unknown to the Western world until 1812. Beyond its iconic Treasury facade lies an entire metropolis of royal tombs, temples, and hydraulic engineering that allowed a civilization to flourish in the arid desert.",
       id: "Tersembunyi di balik dinding ngarai sempit bernama Siq, Petra tidak dikenal dunia Barat hingga tahun 1812. Di balik fasad Al-Khazneh yang ikonik terhampar metropolis makam kerajaan, kuil, dan rekayasa hidrolik yang membuat peradaban ini berkembang di tengah gurun."
@@ -300,7 +300,7 @@ const storiesData = [
   {
     title: { en: "How Was the Great Wall Built?", id: "Bagaimana Tembok Besar Dibangun?" },
     meta: { en: "8 min read · Ancient Engineering", id: "8 mnt baca · Rekayasa Kuno" },
-    image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=80",
+    image: "./assets/images/wonders/great-wall.webp",
     content: {
       en: "Constructed over more than two millennia by millions of soldiers, peasants, and artisans, builders adapted to local terrain—using tamped earth in the plains, stone in the mountains, and even sticky rice mortar to bind bricks together with remarkable strength.",
       id: "Dibangun selama lebih dari dua milenium oleh jutaan prajurit, petani, dan perajin, para pembangun menyesuaikan diri dengan medan sekitar—menggunakan tanah padat di dataran, batu di pegunungan, hingga adukan beras ketan untuk merekatkan bata dengan kekuatan luar biasa."
@@ -309,7 +309,7 @@ const storiesData = [
   {
     title: { en: "The Engineering of the Colosseum", id: "Rekayasa Arsitektur Colosseum" },
     meta: { en: "7 min read · Roman Architecture", id: "7 mnt baca · Arsitektur Romawi" },
-    image: "./assets/images/wonders/colosseum.png",
+    image: "./assets/images/wonders/colosseum.webp",
     content: {
       en: "Using travertine limestone, volcanic tuff, and Roman concrete, architects designed 80 arched entrances allowing tens of thousands of spectators to enter and exit within minutes, complete with a retractable canvas awning to shade the crowd.",
       id: "Menggunakan batu kapur travertine, tufa vulkanik, dan beton Romawi, para arsitek merancang 80 pintu masuk melengkung yang memungkinkan puluhan ribu penonton keluar masuk dalam hitungan menit, lengkap dengan kanopi layar tarik untuk meneduhkan penonton."
@@ -320,7 +320,6 @@ const storiesData = [
 let currentLang = localStorage.getItem("7wonders_lang") || "en";
 let activeMapIndex = 0;
 
-// Language Switcher
 const langToggle = document.getElementById("langToggle");
 const langDropdown = document.getElementById("langDropdown");
 const langText = document.getElementById("langText");
@@ -377,7 +376,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Mobile Slide-in Menu (Side to Center) & Scroll Glass Effect
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileBackdrop = document.getElementById("mobileBackdrop");
@@ -455,12 +453,19 @@ window.addEventListener("scroll", () => {
     }
     scrollTopBtn?.classList.add("opacity-0", "pointer-events-none");
   }
+let scrollTicking = false;
+let sectionOffsets = [];
 
-  let currentId = "home";
-  sections.forEach(sec => {
-    const top = sec.offsetTop - 160;
-    if (window.scrollY >= top) currentId = sec.id;
-  });
+function cacheSectionOffsets() {
+  sectionOffsets = Array.from(sections).map((sec) => ({
+    id: sec.id,
+    top: sec.getBoundingClientRect().top + window.scrollY - 160
+  }));
+}
+
+window.addEventListener("resize", cacheSectionOffsets, { passive: true });
+window.addEventListener("load", cacheSectionOffsets);
+cacheSectionOffsets();
 
   navLinks.forEach(link => {
     const isMatch = link.getAttribute("href") === `#${currentId}`;
@@ -690,9 +695,6 @@ document.getElementById("newsletterForm")?.addEventListener("submit", (e) => {
   document.getElementById("newsletterMsg")?.classList.remove("hidden");
 });
 
-// ==========================================
-// CONTACT PAGE INTERACTIONS
-// ==========================================
 
 // 1. Keajaiban Tujuan Pills (Multi/Toggle Select)
 const wonderPills = document.querySelectorAll(".wonder-pill");
@@ -720,7 +722,6 @@ wonderPills.forEach(pill => {
   });
 });
 
-// 2. Copy Email Button
 const copyEmailBtn = document.getElementById("copyEmailBtn");
 copyEmailBtn?.addEventListener("click", async () => {
   const email = copyEmailBtn.dataset.email || "hello@7wonders.id";
@@ -737,7 +738,6 @@ copyEmailBtn?.addEventListener("click", async () => {
   }
 });
 
-// 3. Contact Reservation Form Submit
 const contactForm = document.getElementById("contactForm");
 const contactFormFeedback = document.getElementById("contactFormFeedback");
 
@@ -758,7 +758,6 @@ contactForm?.addEventListener("submit", (e) => {
   syncSelectedWonders();
 });
 
-// 4. FAQ Accordion
 const faqToggles = document.querySelectorAll(".faq-toggle");
 faqToggles.forEach(toggle => {
   toggle.addEventListener("click", () => {
@@ -786,60 +785,86 @@ faqToggles.forEach(toggle => {
   });
 });
 
-// ==========================================
-// SMOOTH WHEEL SCROLL
-// ==========================================
 let currentScroll = window.scrollY;
 let targetScroll = window.scrollY;
-let isAnimating = false;
-const ease = 0.12; // Makin kecil makin lembut, makin besar makin cepat berhenti
+let isSmoothAnimating = false;
+let isProgrammaticScroll = false;
+const smoothEase = 0.12; // 0.08 - 0.18 (makin kecil makin lembut)
 
-function updateSmoothScroll() {
+function getMaxScroll() {
+  return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+}
+
+function stepSmoothScroll() {
   const diff = targetScroll - currentScroll;
 
   if (Math.abs(diff) > 0.5) {
-    currentScroll += diff * ease;
+    currentScroll += diff * smoothEase;
+    isProgrammaticScroll = true;
     window.scrollTo(0, currentScroll);
-    requestAnimationFrame(updateSmoothScroll);
+    requestAnimationFrame(() => {
+      isProgrammaticScroll = false;
+    });
+    requestAnimationFrame(stepSmoothScroll);
   } else {
     currentScroll = targetScroll;
+    isProgrammaticScroll = true;
     window.scrollTo(0, currentScroll);
-    isAnimating = false;
+    requestAnimationFrame(() => {
+      isProgrammaticScroll = false;
+    });
+    isSmoothAnimating = false;
   }
 }
 
-function startSmoothScroll() {
-  if (!isAnimating) {
-    isAnimating = true;
-    requestAnimationFrame(updateSmoothScroll);
+function animateScrollTo(position) {
+  targetScroll = Math.max(0, Math.min(position, getMaxScroll()));
+  if (!isSmoothAnimating) {
+    currentScroll = window.scrollY;
+    isSmoothAnimating = true;
+    requestAnimationFrame(stepSmoothScroll);
   }
+}
+
+function hasScrollableAncestor(el, deltaY) {
+  while (el && el !== document.body && el !== document.documentElement) {
+    const style = window.getComputedStyle(el);
+    const overflowY = style.overflowY;
+    const canScroll = (overflowY === "auto" || overflowY === "scroll") && el.scrollHeight > el.clientHeight;
+    if (canScroll) {
+      if (deltaY < 0 && el.scrollTop > 0) return true;
+      if (deltaY > 0 && el.scrollTop + el.clientHeight < el.scrollHeight - 1) return true;
+    }
+    el = el.parentElement;
+  }
+  return false;
 }
 
 window.addEventListener("wheel", (e) => {
+  if (e.ctrlKey || e.metaKey) return;
+
   const isDetailOpen = detailModal && !detailModal.classList.contains("hidden");
   const isSearchOpen = searchModal && !searchModal.classList.contains("hidden");
   if (isDetailOpen || isSearchOpen || isMobileMenuOpen) return;
+  if (hasScrollableAncestor(e.target, e.deltaY)) return;
 
   e.preventDefault();
 
-  if (!isAnimating) {
+  const baseTarget = isSmoothAnimating ? targetScroll : window.scrollY;
+  if (!isSmoothAnimating) {
     currentScroll = window.scrollY;
-    targetScroll = window.scrollY;
   }
-
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  targetScroll = Math.max(0, Math.min(targetScroll + e.deltaY, maxScroll));
-  startSmoothScroll();
+  animateScrollTo(baseTarget + e.deltaY);
 }, { passive: false });
 
 window.addEventListener("scroll", () => {
-  if (!isAnimating) {
+  if (!isProgrammaticScroll) {
     currentScroll = window.scrollY;
     targetScroll = window.scrollY;
+    isSmoothAnimating = false;
   }
-});
+}, { passive: true });
 
-// Klik menu navbar (#wonders, #map, #reservasi, dll) ikut meluncur halus
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     const id = anchor.getAttribute("href");
@@ -848,20 +873,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (!targetEl) return;
 
     e.preventDefault();
-    if (!isAnimating) currentScroll = window.scrollY;
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const offsetTop = targetEl.getBoundingClientRect().top + window.scrollY - 80;
-    targetScroll = Math.max(0, Math.min(offsetTop, maxScroll));
-    startSmoothScroll();
+    animateScrollTo(offsetTop);
   });
 });
 
-// Tombol panah ke atas
 scrollTopBtn?.addEventListener("click", () => {
-  if (!isAnimating) currentScroll = window.scrollY;
-  targetScroll = 0;
-  startSmoothScroll();
+  animateScrollTo(0);
 });
 
-// Apply Saved Language on Load
 applyLanguage(currentLang);
